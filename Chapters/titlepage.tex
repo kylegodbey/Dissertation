@@ -1,0 +1,79 @@
+% This is an example for a `Title Page'.
+% To generate the final document, run latex, build and quick build commands
+% on the skeleton-thesis file not this one.
+
+%%% Options for signature
+\newtoggle{signatures}
+\IfSubStr{ y }{y}{ \toggletrue{signatures} }{ \togglefalse{signatures} }
+
+%% Starting `Title Page'
+
+% This setting will make a difference to the output because the page number is
+% suppressed for the title page.
+\pagenumbering{alph}
+
+%% Adding metadata for title page
+\begin{titlepage}
+\thispagestyle{empty}\enlargethispage{\the\footskip}
+\begin{center}
+    {\setstretch{1.66} { Low-Energy Nuclear Reactions Using Time-Dependent Density Functional Theory }\par}
+    \vskip .4in
+    By
+    \vskip .3in
+    { Kyle Godbey }
+    \vskip .3in
+
+    \begin{doublespace}
+    Dissertation\\
+        Submitted to the Faculty of the           \\
+        Graduate School of Vanderbilt University  \\
+        in partial fulfillment of the requirements\\
+        for the degree of \\ [.1in]
+    \end{doublespace}
+    \MakeUppercase{DOCTOR OF PHILOSOPHY} \\[.1in]
+    in \\ [.1in]
+    { Physics and Astronomy }  \\ [.25in]
+    { May 8th, 2020 }\\ [.25in]
+    Nashville, Tennessee
+    \vskip .5in
+\end{center}
+
+%%%%% --- Committee Members - Signatures --- %%%%%
+\iftoggle{signatures}{
+    Approved: \hskip 2.9in  Date: \\[2.0em]
+    \noindent\begin{tabular}{ll}
+        % Member 1
+        \makebox[4.0in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+        Victoria Greene, Ph.D. & \\[0.15in]
+        % Member 2
+        \makebox[4.0in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+        Kelly Holley-Bockelmann, Ph.D. & \\[0.15in]
+        % Member 3
+        \makebox[4.0in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+        Norman Tolk, Ph.D. & \\[0.15in]
+        % Member 4
+        \makebox[4.0in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+        Sait A. Umar, Ph.D. & \\[0.15in]
+        % Member 5
+        \makebox[4.0in]{\hrulefill} & \makebox[1.5in]{\hrulefill}\\
+        Kalman Varga, Ph.D. & \\[0.15in]
+    \end{tabular}
+}{
+    \begin{center}
+        \begin{doublespace}
+            Approved:\\
+            % 1st Committee Member
+            Victoria Greene, Ph.D.\\[.14in]
+            % 2nd Committee Member
+            Kelly Holley-Bockelmann, Ph.D.\\[.14in]
+            % 3rd Committee Member
+            Norman Tolk, Ph.D.\\[.14in]
+            % 4th Committee Member
+            Sait A. Umar, Ph.D.\\[.14in]
+            % 5th Committee Member
+            Kalman Varga, Ph.D.\\[.14in]
+        \end{doublespace}
+    \end{center}
+}
+
+\end{titlepage}
