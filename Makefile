@@ -27,7 +27,7 @@ open_pdf: thesis.tex
 
 ## Compiles Main Thesis file
 thesis.tex: clean
-	(cd ./Thesis && latexmk -pdf thesis.tex)
+	(cd ./Thesis && latexmk -interaction=nonstopmode -pdf thesis.tex)
 
 ## Clean all unnecessary latex-related files
 clean:
