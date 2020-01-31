@@ -111,7 +111,6 @@ leads to the usual frozen Hartree-Fock (FHF)
 potential\,\citep{denisov2002,washiyama2008,simenel2008,simenel2012}
 \oeq
 V_{FHF}(\vR)=\int \d\vr \sdf \mH[\rho_1(\vr)+\rho_2(\vr-\vR)] - E[\rho_1] -E[\rho_2],
-\label{eq:frozen}
 \ceq
 where $\vR$ is the distance vector between the centres of mass of the nuclei.
 The FHF potential, assumed to be central, can then directly be used to compute
@@ -140,7 +139,6 @@ The HF minimization of the combined system is thus performed subject to the cons
 local proton ($p$) and neutron ($n$) densities do not change:
 \begin{equation}
 \delta \< \ H - \sum_{q=p,n}\int d\vr \ \lambda_q(\vr) \ [\rho_{1_q}(\vr)+\rho_{2_q}(\vr-\vR)] \ \> = 0\,,
-\label{eq:var_dens}
 \end{equation}
 where the $\lambda_{n,p}(\vr)$ are Lagrange parameters at each point 
 of space constraining the neutron and proton densities.
@@ -149,7 +147,6 @@ This equation determines the state vector (Slater determinant) $|\Phi(\vR)\>$.
 The DCFHF potential, assumed to be central, is then defined as
 \begin{equation}
 V_{\mathrm{DCFHF}}(R)=\<\Phi(\vR) | H | \Phi(\vR) \>-E[\rho_1]-E[\rho_2]\,.
-\label{eq:vr}
 \end{equation}
 
 \begin{figure*}

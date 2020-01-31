@@ -131,9 +131,9 @@ with the perspective of identifying limitations of the approach and possible fut
 
 The structure of the paper is as follows. A thorough description of both DCFHF and DC-TDHF approaches is presented in Sec.~\ref{sec:form} 
 with a general prescription for calculating transmission probabilities presented first. 
-Section~\ref{sec:res} then presents the results from both methods as they compare to experimental data 
+Section~\ref{cc:sec:res} then presents the results from both methods as they compare to experimental data 
 and recent predictions of the S-factor behavior at low energies of astrophysical interest. 
-Finally a brief summary of the results and a few closing comments are presented in Sec.~\ref{sec:conclusion}.
+Finally a brief summary of the results and a few closing comments are presented in Sec.~\ref{cc:sec:conclusion}.
 
 \section{Formalism}
 \label{sec:form}
@@ -162,7 +162,7 @@ This allows the single-particle states to reorganize into a lower energy configu
 The potential is defined similarly to FHF, though with the density-constrained wave functions~\protect\citep{simenel2017}
 \begin{equation}
 V_{\mathrm{DCFHF}}(R)=\<\Phi_{\mathrm{DC}}(R) | H | \Phi_{\mathrm{DC}}(R) \>-E[\rho_1]-E[\rho_2]\,.
-\label{eq:vr}
+%\label{eq:vr}
 \end{equation}
 The resulting DCFHF potential has the same barrier height as FHF, though the pressure from the Pauli exclusion principle usually forms a pocket inside the fusion barrier.
 DCFHF is the static analog to the density-constrained time-dependent Hartree-Fock (DC-TDHF) approach discussed in Sec.~\ref{sec:dctdhf}, and thus is particularly useful to separate static and dynamic effects~\protect\citep{vophuoc2016}.
@@ -202,7 +202,6 @@ for the single-particle states
 \begin{equation}
 h(\{\phi_{\mu}\}) \ \phi_{\lambda} (r,t) = i \hbar \frac{\partial}{\partial t} \phi_{\lambda} (r,t)
 \ \ \ \ (\lambda = 1,...,A)\,,
-\label{eq:TDHF}
 \end{equation}
 where $h$ is the HF single-particle Hamiltonian.
 These are the fully microscopic time-dependent Hartree-Fock equations.
@@ -244,7 +243,7 @@ DC-TDHF predictions should then be compared with experimental cross-sections on-
 Transmission probabilities $T_{l}(E_{\mathrm{c.m.}})$ are acquired by numerical integration of the two-body Schr\"odinger equation:
 \begin{equation}
 \left[\frac{-\hbar^2}{2\mathrm{M(R)}}\frac{d^2}{dR^2}+\frac{l(l+1)\hbar^2}{2\mathrm{M(R)}R^2} + V(R) - E\right]\psi=0 .
-\label{eq:se}
+\label{cc:eq:se}
 \end{equation}
 The IWBC method is used to calculate transmission probabilities which assumes that fusion occurs once the minimum of V(R) is reached~\protect\citep{rawitscher1964}.
 The barrier penetrability $T_l(E_{\mathrm{c.m.}})$ is then the ratio of the incoming flux at the minimum of the potential inside the barrier to the incoming flux at a large distance.
@@ -262,7 +261,7 @@ Instead of solving the Schr\"odinger equation using the coordinate-dependent mas
 \begin{equation}
 d\bar{R}=\left(\frac{\mathrm{M(R)}}{\mu}\right)^{\frac{1}{2}}dR.
 \end{equation}
-Upon making this transformation M(R) is replaced by the reduced mass $\mu$ in Eq.~\ref{eq:se} and the Schr\"odinger equation is solved using the modified Numerov method as it is formulated in the coupled-channel code CCFULL~\protect\citep{hagino1999}.
+Upon making this transformation M(R) is replaced by the reduced mass $\mu$ in Eq.~\ref{cc:eq:se} and the Schr\"odinger equation is solved using the modified Numerov method as it is formulated in the coupled-channel code CCFULL~\protect\citep{hagino1999}.
 %In the current work, a transfer matrix approach has been used to incorporate the coordinate-dependent mass in the calculation of transmission probabilities via a discretization of M(R) and V(R)~\protect\citep{fedirko2010}.
 %This technique allows for an alternate method of obtaining fusion cross sections, while still giving the same results for the M(R)$=\mu$ case.
 
@@ -287,7 +286,7 @@ However a finer grid spacing of 0.8~fm was used for the current work to ensure v
 When comparing barrier heights, however, the change between the coarse and fine grid spacings amounts to a difference of about $\Delta \mathrm{V}_{\mathrm{peak}}=0.5$~keV.
 
 \section{Results}
-\label{sec:res}
+\label{cc:sec:res}
 
 \begin{figure}
 	\includegraphics*[width=0.9\textwidth]{../Figures/CC/SFactors.pdf}
@@ -352,13 +351,13 @@ Nevertheless, the variations in the experimental data does not allow for the una
 
 \begin{figure}
 	\includegraphics*[width=\textwidth]{../Figures/CC/SFactorsComp.pdf}
-	\caption{(Color online) Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion S factors from DC-TDHF at (a) differing TDHF energies and (b) using different functionals.}
+	\caption{Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion S factors from DC-TDHF at (a) differing TDHF energies and (b) using different functionals.}
 	\label{fig:sfaccomp}
 \end{figure}
 
 
 \section{Conclusion}
-\label{sec:conclusion}
+\label{cc:sec:conclusion}
 A precise study of \textsuperscript{12}C+\textsuperscript{12}C fusion has been performed using multiple parameter-free, microscopic approaches. 
 Various energy density functionals were also explored, including the first application to heavy-ion fusion with an energy-density functional based on the quark-meson coupling model.
 A comparison between FHF and DCFHF approaches shows that Pauli repulsion only plays a minor role in this system, and is not sufficient to induce a maximum in the astrophysical S factor. 

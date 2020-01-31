@@ -7,11 +7,11 @@
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PROJECT_NAME = Dissertation
 
-LATEX     = pdflatex
+LATEX     = xelatex
 BASH      = bash -c
 ECHO      = echo
 RM        = rm
-TMP_SUFFS = aux bbl blg log dvi ps eps out fdb_latexmk fls lof lot nlo
+TMP_SUFFS = aux bbl blg log dvi ps eps out fdb_latexmk fls lof lot nlo toc
 RM_TMP    = ${RM} $(foreach suff, ${TMP_SUFFS}, *.${suff})
 
 #################################################################################
@@ -27,7 +27,7 @@ open_pdf: thesis.tex
 
 ## Compiles Main Thesis file
 thesis.tex: clean
-	(cd ./Thesis && latexmk -interaction=nonstopmode -pdf thesis.tex)
+	(cd ./Thesis && latexmk -interaction=nonstopmode -pdf -xelatex thesis.tex)
 
 ## Clean all unnecessary latex-related files
 clean:

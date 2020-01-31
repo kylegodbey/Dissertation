@@ -3,10 +3,425 @@
 % To generate the final document, run latex, build and quick build commands
 % on the skeleton-thesis file not this one.
 
-\chapter{Title for Chapter 5}\label{chapters:chapter_5}
+\chapter{Deformed shell effects in $^{48}$Ca+$^{249}$Bk quasifission fragments}\label{chapters:chapter_7}
 \vspace{-7mm}
 
+\author{K. Godbey}
+\author{A.S. Umar}
+\affil{Department of Physics and Astronomy, Vanderbilt University, Nashville, Tennessee 37235, USA}
+\author{C. Simenel}
+\affil{Department of Theoretical Physics and Department of Nuclear Physics, Research School of Physics and Engineering, The Australian National University, Canberra ACT  2601, Australia}
 
+\section*{Abstract}
+	% the extra lines centers the abstract like the final PRC document
+
+		{\bf [Background]} Quasifission is the main reaction channel hindering the formation of superheavy nuclei (SHN). Its understanding will help to optimize entrance channels for SHN studies. Quasifission also provides a probe to understand the influence of shell effects in the formation of the fragments.
+		
+		{\bf [Purpose]} Investigate the role of shell effects in quasifission and their interplay with the orientation of the deformed target in the entrance channel.
+		
+		{\bf [Methods]} $^{48}$Ca$+^{249}$Bk collisions are studied with the time-dependent Hartree-Fock approach for a range of angular momenta and orientations.
+		
+		{\bf [Results]} Unlike similar reactions with a $^{238}$U target, no significant shell effects which could be attributed to $^{208}$Pb ``doubly-magic'' nucleus are found. However, the octupole deformed shell gap at $N=56$ seems to strongly influence quasifission in the most central collisions.
+		
+		{\bf [Conclusions]} Shell effects similar to those observed in fission affect the formation of quasifission fragments. Mass-angle correlations could be used to experimentally isolate the fragments influenced by $N=56$ octupole shell gaps.
+
+
+%------------------------------------------------------------------------------
+
+\section{Introduction}
+
+Quasifission occurs when the collision of two heavy nuclei produces two fragments with similar characteristics to fusion-fission fragments, but without the intermediate formation of a fully equilibrated compound nucleus~\citep{heusch1978,back1981,back1983,bock1982}.
+It is the main mechanism that hinders fusion of heavy nuclei and consequently the formation of
+superheavy elements~\citep{sahm1984,gaggeler1984,schmidt1991,back2014,khuyagbaatar2018,banerjee2019}.
+It is thus crucial to achieve a deeper insight of quasifission in order to minimize its impact and maximize the formation of compound nuclei for heavy and superheavy nuclei searches.
+
+Quasifission also provides a unique probe to quantum many-body dynamics of out-of-equilibrium nuclear systems.
+For instance, quasifission studies bring information on mass equilibration time-scales~\citep{toke1985,shen1987,durietz2011}, on shell effects in the exit channels~\citep{itkis2004,nishio2008,kozulin2014,wakhle2014,morjean2017}, as well as on the nuclear equation of state~\citep{veselsky2016,zheng2018}.
+In fusion-fission, the exit channel is essentially determined by the properties of the compound nucleus, and does not depend a priori on the specificity of the entrance channel.
+This is not the case in quasifission which is known to preserve a strong memory of the entrance channel properties.
+As a result, understanding the interplay between the entrance and exit channels requires a significant amount of experimental systematic studies.
+These include investigations of the role of beam energy~\citep{back1996,nishio2008,nishio2012}, dissipation~\citep{williams2018}, fissility of the compound nucleus~\citep{lin2012,durietz2013},
+deformation of the target~\citep{hinde1995,hinde1996,knyazheva2007,hinde2008,nishio2008},
+spherical shells of the collision partners~\citep{simenel2012b,mohanto2018}, and the neutron-to-proton ratio
+$N/Z$ of the compound nucleus~\citep{hammerton2015,hammerton2019}.
+
+On the theory side, quasifission has been studied with various approaches.
+This includes classical methods such as
+a transport model~\citep{diaz-torres2001}, the dinuclear system model \citep{adamian2003,huang2010,bao2015,guo2018c}, and models based on the Langevin equation~\citep{zagrebaev2005,aritomo2009,aritomo2012,karpov2017,sekizawa2019b}.
+Microscopic approaches such as quantum molecular dynamics~\citep{wen2013,wang2016,zhao2016} and the
+time-dependent Hartree-Fock (TDHF) theory~\citep{golabek2009,kedziora2010,wakhle2014,oberacker2014,hammerton2015,umar2015a,umar2016,sekizawa2016,yu2017,ayik2017,ayik2018,sekizawa2017a,wakhle2018,morjean2017,sekizawa2019b} have also been used. See~\citep{simenel2012,simenel2018,sekizawa2019,stevenson2019} for recent reviews on TDHF.
+
+An advantage of microscopic calculations is that their only inputs are the parameters of the energy density functional describing the interaction between the nucleons.
+Since these parameters are usually fitted on nuclear structure properties only, such calculations do not require additional parameters determined from reaction mechanisms, such as nucleus-nucleus potentials.
+In addition, TDHF calculations treat both reaction mechanisms and structure properties on the same footing.
+This is important for reactions with actinide targets which exhibit a strong quadrupole deformation.
+
+Indeed, the outcome of the calculations strongly depend on the orientation of the nuclei.
+For instance, TDHF calculations of $^{40}$Ca$+^{238}$U reaction showed that only collisions with the side of the $^{238}$U could lead to configurations which are compact enough to enable fusion~\citep{wakhle2014}.
+This is contrary to the collisions with the tip of $^{238}$U which seem to always lead to a fast quasifission (after $\sim5-10$ zeptoseconds (zs) of contact time) as long as contact between collision partners is achieved.
+A remarkable observation of this work was the systematic production of lead nuclei ($Z=82$), known to possess a strong spherical proton shell gap, in tip collisions only, showing a strong influence of orientation dependent shell effects in the production of the fragments.
+Such influence of shell effects was proposed to explain peaks in fragment mass distributions~\citep{itkis2004,nishio2008,wakhle2014}, but experimental confirmation came only recently with the observation of a peak of quasifission fragments at $Z=82$ protons from x-ray measurements~\citep{morjean2017}.
+
+Deformed shell effects in the region of $^{100}$Zr have also been invoked to interpret the outcome of TDHF simulations of $^{40,48}$Ca+$^{238}$U, $^{249}$Bk collisions~\citep{oberacker2014,umar2016}.
+It is then natural to wonder if other shell effects, spherical or deformed, could be driving the dinuclear system out of its compact shape, into quasifission.
+Potential candidates are shell effects known to influence the outcome of fission reactions.
+It has recently been proposed that octupole deformed shell effects, in particular with $Z$ or $N=52-56$, are the main driver to asymmetric fission~\citep{scamps2018,scamps2019}.
+The fact that $^{208}$Pb can easily acquire an octupole deformation (its first excited state is a $3^-$ octupole vibration) is compatible with this interpretation.
+Note also that some superheavy nuclei like $^{294}$Og are expected to encounter super-asymmetric fission and produce a heavy fragment around $^{208}$Pb~\citep{poenaru2018,warda2018,matheson2019,zhang2018}, confronting the idea that quasifission valleys could match fission ones.
+
+In this work we study the $^{48}$Ca+$^{249}$Bk reaction with the TDHF approach.
+The choice of this reaction is motivated by its success in
+forming the element $Z=117$~\citep{oganessian2010,oganessian2011,oganessian2012,oganessian2013,khuyagbaatar2014}.
+Previous TDHF studies of quasifission with actinide targets were restricted to one or two orientations of the target to limit computational time.
+However, to allow possible comparison with experimental data, it is important to simulate a range of orientations in addition to the usual tip and side configurations.
+We therefore performed systematic simulations, spanning both a range of orientations and a range of angular momenta.
+This allow us to study correlations between, e.g.,  mass, angle, kinetic energy, as well as to predict distributions of neutron and proton numbers at the mean-field level.
+These distributions are used to identify potential shell gaps driving quasifission.
+The method is described in Sec.~\ref{sec:method}.
+The results are discussed in Sec.~\ref{sec:results}.
+We then conclude in Sec.~\ref{cabk:sec:conclusion}.
+
+%Fusion dependence on isospin dynamics \citep{vophuoc2016,godbey2017}
+
+\section{Method}\label{sec:method}
+
+The TDHF theory provides a microscopic approach to investigate
+a large selection of phenomena
+observed in low energy nuclear physics~\citep{negele1982,simenel2012,simenel2018}.
+In particular, TDHF provides a dynamic quantum many-body description of
+nuclear reactions in the
+vicinity of the Coulomb barrier, such as fusion~\citep{bonche1978,flocard1978,simenel2001,umar2008a,umar2006d,
+	washiyama2008,umar2010a,guo2012,keser2012,simenel2013a,oberacker2012,oberacker2010,umar2012a,simenel2013b,umar2014a,jiang2014},
+deep-inelastic reactions and transfer~\citep{koonin1977,simenel2010,simenel2011,umar2008a,
+	sekizawa2013,scamps2013a,sekizawa2014,bourgin2016,umar2017,sekizawa2019},
+and dynamics of (quasi)fission fragments~\citep{umar2010a,wakhle2014,oberacker2014,simenel2014a,
+	umar2015a,umar2015c,scamps2015a,goddard2015,bulgac2016,sekizawa2016,umar2016}.
+The classification of various reaction types in TDHF is done by calculating the
+time evolution of expectation values of one-body observables:
+fragments' centers of masses, mass and charges on each side of the neck, kinetic energy,
+orbital angular momentum, among others. Quasifission is characterized by two final
+state fragments that emerge after a long lived composite system (typically longer
+than 5\,zs) and final fragment masses $A_{f} = A_{\rm CN}/2 \pm 20$ or more. In
+addition, final TKEs distinguish quasifission from highly damped deep-inelastic
+collisions, which have a smaller mass and charge difference between initial and
+final fragments. In TDHF the mass and charge difference between the initial nuclei
+and the final fragments measure the number of nucleons transferred. As discussed
+above fusion corresponds to the case where the final product remains as a single composite
+for a reasonably long time, chosen here to be 35~zs.
+
+The TDHF equations for the single-particle wave functions
+\begin{equation}
+h(\{\phi_{\mu}\}) \ \phi_{\lambda} (r,t) = i \hbar \frac{\partial}{\partial t} \phi_{\lambda} (r,t)
+\ \ \ \ (\lambda = 1,...,A) \ ,
+\end{equation}
+can be derived from a variational principle. The main approximation in TDHF is
+that the many-body wave function $\Phi(t)$  is assumed to be a single time-dependent
+Slater determinant at all times. It describes the time-evolution of the single-particle
+wave functions in a mean-field corresponding to the dominant reaction channel.
+During the past decade it has become numerically feasible to perform TDHF calculations on a
+3D Cartesian grid without any symmetry restrictions
+and with much more accurate numerical methods~\citep{bottcher1989,umar2006c,sekizawa2013,maruhn2014}.
+\begin{figure}
+	\centerline{\includegraphics*[width=\textwidth]{../Figures/CaBk/geometry.pdf}}
+	\caption{Schematic representation of the initial configuration for an impact parameter $b$ and  a velocity vector $\mathbf{v}_\infty$ defining the collision plane and the collision axis. The orientation of the target is defined by the angles $\beta$ (rotation around the axis perpendicular to the reaction plane) and $\alpha$ (rotation around the collision axis).}
+	\label{fig:geometry}
+\end{figure}
+
+In this paper, we focus on fusion and quasifission in the reaction
+$^{48}\mathrm{Ca}+^{249}\mathrm{Bk}$. In our TDHF calculations
+we use the Skyrme SLy4d energy density functionals~\citep{kim1997}
+including all of the relevant time-odd terms in the mean-field Hamiltonian.
+Static Hartree-Fock (HF) calculations without pairing predict a spherical
+density distribution for $^{48}$Ca while $^{249}$Bk shows prolate quadrupole
+and hexadecupole deformation, in agreement with experimental observations.
+Numerically, we proceed as follows: First we generate very well-converged static
+HF wave functions for the two nuclei on the 3D grid.
+Three-dimensional TDHF initialization of the deformed $^{249}$Bk nucleus, with a particular alignment of its symmetry
+axis with respect to the collision axis, can be most easily achieved by
+evaluating the initial guess for HF calculations
+on mesh values rotated with respect to the code axes. Subsequent HF iterations do not change this
+orientation thus resulting in the desired HF solution. This procedure involves no interpolation
+procedure and is the most straightforward method to implement in TDHF codes~\citep{pigg2014}.
+Otherwise, static solutions obtained for extreme angles ($0^{\circ}$ or $90^{\circ}$ with respect to collision
+axis) can be very accurately interpolated to arbitrary angles~\citep{pigg2014} followed by a few additional static iterations for extra accuracy.
+\begin{figure}
+	\includegraphics*[width=\textwidth]{../Figures/CaBk/densities.pdf}
+	\caption{Isodensity surfaces at $\rho=0.145$, $0.1$, and $0.02$~fm$^{-3}$ in blue, green, and pink, respectively, shown at times $t\simeq0$ (a), $2.1$ (b), $5.8$ (c), and $6.4$~zs (d) for an initial orientation $\beta=135^{\circ}$ and an angular momentum $L=60\hbar$. For visualization purposes, the reaction plane  is $37^{\circ}$ off the plane of the page.}
+	\label{fig:density}
+\end{figure}
+
+The initial separation is chosen to be $30$~fm
+with nuclei in their ground states. The nuclei are assumed to arrive
+to this separation on a Coulomb trajectory for the purpose of initializing
+the proper boosts.
+In the second
+step, we apply a boost operator to the single-particle wave functions.
+The calculations end when the fragments are well separated (or after 35~zs if they are still in contact). Outgoing Coulomb trajectories are then assumed to determine the scattering angle.
+
+The time-propagation
+is carried out using a Taylor series expansion (up to orders $10-12$) of the
+unitary mean-field propagator, with a time step $\Delta t = 0.4$~fm/c.
+For reactions leading to superheavy dinuclear systems, the TDHF calculations
+require very long CPU times: a single TDHF run at fixed $E_\mathrm{c.m.}$ energy
+for a fixed impact parameter $b$ and orientation angle $\beta$ takes about 2-3 days of CPU time
+on a 16-processor LINUX workstation.
+
+Assuming the $^{249}$Bk nucleus to be axially symmetric with no octupole deformation, the cross-section or yield for a specific reaction channel $\xi$ is proportional to
+\begin{equation}
+\sigma_\xi\propto \sum_L (2L+1) \int_0^{\frac{\pi}{2}} d\beta \,\sin\beta \int_0^\pi d\alpha \,P_L^{(\xi)}(\beta,\alpha). \label{eq:sigma}
+\end{equation}
+Here, $P_L^{(\xi)}(\beta,\alpha)$ is the probability for the reaction channel $\xi$ and an orientation of the target defined by the rotation angles $\beta$ and $\alpha$ (see Fig.~\ref{fig:geometry}).
+The orientation of the deformation axis is obtained by applying first a rotation of an angle $\beta$ around the axis perpendicular to the reaction plane, and then a rotation of an angle $\alpha$ around the collision axis.
+
+The TDHF calculations are performed for a range of orbital angular momenta $L_i\hbar$ with $\{L_i\}=\{0,10,20\cdots N_L\}$ and $N_L=12$ or 13, depending on the orientation (some orientations lead to quasi-elastic collisions at $L=120$, in which case $L=130$ is not computed).
+The first term is then replaced by $$\sum_L (2L+1) \rightarrow \sum_{i=1}^{N_L}K_i \,\,\,\mbox{~with~} \,\,\,
+K_i=\sum_{L=L_i-\Delta_i^-}^{L_i+\Delta^+}(2L+1),$$
+where $\Delta^+=5$, $\Delta_1^-=0$ and $\Delta_{i\ne 1}=4$.
+
+The double integral in Eq.~\eqref{eq:sigma} is computationally too demanding.
+The integral over $\alpha$ is then replaced by a sum over probabilities for $\alpha=0$ and $\pi$.
+Equivalently, we can ignore $\alpha$ and extend the integral over $\beta$ up to $\pi$.
+We then define the probability
+$$\tilde{P}_{L_i}^{(\xi)}(\beta) = \begin{cases} P_{L_i}^{(\xi)}(\beta,0)\mbox{~if~}\beta\le\frac{\pi}{2}\\
+P_{L_i}^{(\xi)}(\pi-\beta,\pi)\mbox{~if~}\beta > \frac{\pi}{2}\end{cases}.$$\\
+
+The remaining integral over $\beta$ is discretized with $N_\beta=12$ angles $\{\beta_n\}=\{0^{\circ},15^{\circ},30^{\circ},\cdots ,165^{\circ}\}$.
+We can finally write the approximate cross-section as
+\begin{equation}
+\sigma_\xi\simeq \sum_{i=1}^{N_L}K_i \sum_{n=1}^{N_\beta} C_n\, \tilde{P}^{(\xi)}_{L_i}(\beta_n)\;,
+\end{equation}
+where we have defined
+$$C_n=\begin{cases}
+2(1-\cos\delta) \mbox{~if~} n=1\\
+\cos(\beta_n-\delta)-\cos(\beta_n+\delta) \mbox{~if~} n>1 \;,
+\end{cases}
+$$
+with $\delta=7.5^{\circ}$.
+Note that, because of its semi-classical behavior, the TDHF theory leads to probabilities $\tilde{P}^{(\xi)}_{L_i}(\beta_n)=0$ or 1 for the reaction channel $\xi$ for a given orientation and angular momentum.
+
+\section{Results}\label{sec:results}
+
+The $^{48}$Ca$+^{249}$Bk at $E_{c.m.}=234$~MeV has been studied as a function of the orientation $\beta$ of the target (see Fig.~\ref{fig:geometry}) and as a function of orbital angular momentum $L$, given in units of $\hbar$, totaling 148 collisions.
+
+\subsection{Quasifission characteristics}
+\begin{figure}
+	\includegraphics*[width=\textwidth]{../Figures/CaBk/MED.pdf}
+	\caption{Total kinetic energy of the fragments as a function of their mass ratio. The curve corresponds to the Viola systematics~\citep{viola1985,hinde1987}.}
+	\label{fig:MED}
+\end{figure}
+
+Figure~\ref{fig:density} shows a typical example of density evolution for a non-central collision.
+Different isodensity surfaces are represented.
+The rings observed at highest density in panels (a) and (b) are coming from shell structure effects \citep{simenel2012}.
+After contact, the nuclei are trapped in a potential pocket, forming a dinuclear system (panel (b)) which, unlike in fusion, does not reach an equilibrated compound nucleus.
+When the dinuclear system fissions (panel (c)), it forms two fragments (panel (d)) which preserve a memory of the entrance channel.
+\begin{figure}
+	\includegraphics*[width=\textwidth]{../Figures/CaBk/central_beta.pdf}
+	\caption{Mass ratio $M_R$ as a function of orientation angle $\beta$ for central collisions. Fusion is indicated by the shaded area. }
+	\label{fig:central_beta}
+\end{figure}
+
+The outgoing fragments for this reaction are $^{94}$Sr and $^{203}$Au.
+Such a significant mass transfer towards a more mass symmetric configuration is one of the characteristics of quasifission.
+A second characteristic is the rotation of the dinuclear system before scission.
+This rotation is due to the initial angular momentum for non-central collisions.
+For contact times $\tau<20$~zs, the dinuclear system usually does not undergo a full rotation before scission, resulting in so-called fast quasifission~\citep{durietz2013,hinde2018}.
+Such times are also too short for the system to achieve full mass equilibration and form two fragments with similar masses.
+Fast quasifission then results in correlations between masses and angles which can be used to infer the time scale of the reaction~\citep{toke1985,durietz2011}.
+The density evolution represented in Fig.~\ref{fig:density} is an example of fast quasifission reaction as the fragments are
+in contact for $\sim6$~zs and the dinuclear system rotates by only $\sim90$~degrees.
+In fact, all quasifissions observed in our calculations for this system correspond to fast quasifission, producing fragment mass-angle correlations which will be studied in Section~\ref{sec:MAD}.
+
+Another characteristic of quasifission is that the reaction is fully damped.
+In quasifission, the outgoing fragments have a total kinetic energy (TKE) essentially determined by their Coulomb repulsion at scission.
+As a first approximation, this TKE does not depend on the beam energy.
+Figure~\ref{fig:MED} shows the mass-energy distribution (MED), i.e., the distribution of TKE as a function of the number of nucleons $A$ in the fragments.
+Except for quasi-elastic reactions in which the masses of the fragments are very close to the projectile and target masses, the TKE are generally distributed around the Viola systematics~\citep{viola1985,hinde1987} (dashed line) which gives an empirical estimate of fully damped fission fragments.
+
+Each color in Fig.~\ref{fig:MED} shows the location in the MED that is expected for a given range of orbital angular momenta. In each case, two or three values of L and thirteen angles $\beta$  are included.
+The more central collisions ($L\le80 \hbar$) all lead to quasifission, while more peripheral collisions ($L>80\hbar$) lead to both quasi-elastic and quasifission reactions.
+This indicates a strong influence of  orientation on the reaction outcome.
+
+\subsection{Effect of target orientation in central collisions}
+\begin{figure}
+	\includegraphics*[scale=0.9]{../Figures/CaBk/MAD.pdf}
+	\caption{(a) Distribution of scattering angle $\theta_{c.m.}$ versus mass ratio $M_R$ (MAD). The colors correspond to different ranges of angular momenta. (b) Fragment mass yield (histogram). The solid line gives a smooth representation of the histogram using the kernel density estimation with bandwidth 0.012. (c) Mass yields obtained for different ranges of angular momenta.}
+	\label{fig:MAD}
+\end{figure}
+
+Different orientations of the target lead to different compactness of the dinuclear system.
+A clear relation between orientation and compactness is obtained in the case of central collisions ($L=0$) in which case less compact configurations are obtained for $\beta=0$ and $180$~degrees, leading to collisions with the tips of the target, while the most compact configurations are obtained for $\beta=90$~degrees, leading to collisions with the side.
+For non-central collisions, the relationship between orientation and compactness is less straightforward and can be estimated assuming Coulomb trajectories until the distance of closest approach~\citep{wakhle2014}.
+
+
+Figure~\ref{fig:central_beta} shows the mass ratio of the fragments, defined as the ratio between the mass of the fragment and the total mass of the system, as a function of the orientation for central collisions.
+A slight asymmetry between $\beta$ and $\pi-\beta$ is observed due to a small violation of symmetry under reflection across the plane orthogonal to the main deformation axis of  $^{249}$Bk HF ground-state.
+
+Fusion is only observed for side collisions, in agreement with previous TDHF studies \citep{wakhle2014,oberacker2014,umar2016}.
+Overall, a small increase of the mass ratio from $M_R\approx0.28$ to $0.35$ is observed when going from tip orientations to more compact configurations.
+There is, however, no clear transition associated with an eventual critical angle $\beta_{crit}$ when going from tip to side orientation in this system (except for when fusion is achieved).
+This shows the importance of considering a full range of intermediate orientations in order to realize quantitative predictions.
+
+\subsection{Correlations between fragment masses and scattering angles}\label{sec:MAD}
+
+Experimental studies of correlations between fragment masses and scattering angles have led to considerable insights into quasifission mechanisms in the past \citep{toke1985,shen1987,hinde2008,simenel2012b,durietz2013,wakhle2014,hammerton2015,morjean2017,mohanto2018,hinde2018}.
+TDHF calculations have been used recently to help interpret qualitatively these correlations \citep{wakhle2014,hammerton2015,umar2016,sekizawa2016}.
+However, these theoretical studies were somewhat limited by the restriction of initial orientations.
+
+The mass-angle distribution (MAD) of the fragments is shown in Fig.~\ref{fig:MAD}(a).
+The horizontal axis gives the mass ratio $M_R=\frac{m_1}{m_1+m_2}$ where $m_1$ and $m_2$ are the masses of the fragments.
+These masses are for primary fragments, i.e., before nucleon emission takes place.
+This is also what is measured experimentally using 2-body kinematics techniques \citep{toke1985,hinde1996}.
+The colors represent different angular momentum ranges, as in Fig.~\ref{fig:MED}.
+
+Most calculations lead to quasifission with fragment mass ratios $0.28<M_R<0.72$, while projectile and target mass ratios are at $M_R\simeq0.16$ and $0.84$, respectively.
+This indicates significant mass transfer towards more symmetric mass repartitions. However, full symmetry is never achieved in these TDHF calculations, unlike in $^{40}$Ca$+^{238}$U~\citep{wakhle2014}.
+Most peripheral collisions with $L\ge70\hbar$ lead to larger mass asymmetries and a transition from quasifission to deep-inelastic and quasi-elastic reactions.
+Note that fragments from elastic scattering are not shown.
+
+We also see that quasifission fragments are distributed among the full range of scattering angles, from $\theta_{c.m.}=0$ (forward angles) to $180$ degrees (backward angles).
+This wide angular distribution motivates the development of larger angular acceptance detectors \citep{khuyagbaatar2018,banerjee2019}.
+Note that each angular momentum range leads itself to a broad distribution of angles.
+For instance, results from $L\le20 \hbar$ are found all the way from backward angles to $\theta_{c.m.}\simeq70$ degrees, while $L\le40 \hbar$ spans all angles.
+This is a manifestation of the impact of orientation on the angular distribution: for a given angular momentum, the scattering angle strongly depends on the orientation of the target.
+However, there is much less dependence of the mass on the orientation, as each orientation leads to approximately similar mass ratio for quasifission outcomes in this system.
+
+Interestingly, the correlation between quasifission fragment masses and angles shows a narrow mass distribution for the light fragment around $M_R\simeq0.3$ at more backward angles with $\theta_{c.m.}>70$~degrees.
+At more forward angles ($\theta_{c.m.}<70$~degrees), the light fragment mass distribution  broadens and slightly shifts towards larger masses ($M_R\sim0.34$).
+For symmetry reasons, a similar narrow (respectively broad) mass distribution is found in the heavy fragment at $M_R\simeq0.7$ (resp. $M_R\sim0.66$) for $\theta_{c.m.}<110$ (resp. $\theta_{c.m.}>110$) degrees.
+The origin of these features will be discussed using neutron and proton distributions in Sec.~\ref{sec:shell}.
+
+\subsection{Fragment mass distributions}
+
+The theoretical MAD in Fig.~\ref{fig:MAD}(a) is useful to investigate correlations between mass and angle. However it is not directly related to yields and cross-sections as it does not account for the $2L+1$ and $\sin\beta$ terms in Eq.~(\ref{eq:sigma}).
+Yields are better represented in one-dimensional spectra.
+Figure~\ref{fig:MAD}(b) shows a histogram of the mass ratio yield obtained from Eq.~(\ref{eq:sigma}).
+The solid line curve gives a smooth representation of the histogram.
+As these are more illustrative, we will only use these smooth representations of yields in later figures.
+
+The quasifission mass yields in Fig.~\ref{fig:MAD}(b) are strongly peaked at $M_R\sim0.33$ and $0.67$,
+with a full width half maximum FWHM~$\simeq0.1$ corresponding to a standard deviation $\sigma_{M_R}\simeq0.042$.
+Note that the present TDHF calculations neglect mass distributions associated with each single TDHF calculation outcome.
+The latter can be computed using particle-number projection techniques~\citep{simenel2010,sekizawa2013,scamps2013a,scamps2017b}.
+However, the width of the resulting distributions are known to be underestimated in dissipative collisions~\citep{dasso1979}.
+Beyond mean-field calculations incorporating one-body
+fluctuations could also be used~\citep{simenel2011,williams2018,lacroix2014,ayik2015,ayik2015a,ayik2016,ayik2018,tanimura2017}.
+However, these approaches are not used here as they would significantly increase computing time and would become prohibitive with large ranges of orientations and angular momenta.
+
+We can nevertheless attempt a comparison with typical experimental mass width for quasifission distributions, keeping in mind that our theoretical prediction is a lower bound.
+Experimental spread $\sigma_{M_R}$ can roughly be parameterized as a linear function from $\sigma_{M_R}^{(DIC)}\approx0.025$ typical for deep-inelastic collisions (DIC) at the mass ratio of the projectile and target, to $\sigma_{M_R}^{(FF)}=0.07$ in fusion-fission at $M_R=0.5$~\citep{durietz2011}.
+We then get an estimate of $\sigma_{M_R}^{(QF)}\approx 0.047$ at $M_R=0.33$, which is only $\sim10\%$ higher than the TDHF prediction.
+The present calculations, to a large extent, account for the expected fluctuations of the mass of the quasifission fragments.
+These fluctuations are essentially coming from the various orientations of the deformed target nucleus.
+
+Figure~\ref{fig:MAD}(c) shows the expected mass ratio yield distributions for various ranges of angular momenta $L$.
+The purpose of this figure is to compare quantitatively the relative contributions to the yields when going from central to peripheral collisions.
+For instance, we see that, because of the $2L+1$ weighting factor in Eq.~(\ref{eq:sigma}), the most central collisions with $L\le20\hbar$, which are found at backward angles in Fig.~\ref{fig:MAD}(a), have also the smallest contribution to the total yield.
+In order to understand the transition from $M_R\simeq0.30$ to $0.34$ discussed at the end of Sec.~\ref{sec:MAD}, it will then be necessary to fully exploit the correlations between  masses and angles of the quasifission fragments.
+
+
+\subsection{Identification of shell effects in quasifission fragments}\label{sec:shell}
+
+Experimental indications of the role of shell effects in the production of quasifission fragments initially came from mass-yield measurements \citep{itkis2004,nishio2008,wakhle2014}.
+Theoretical predictions from TDHF calculations then supported these views \citep{wakhle2014,oberacker2014,umar2016}.
+However, to unambiguously confirm the role of shell effects, proton or neutron numbers distributions have to be measured.
+Only recently this was done for quasifission for the $^{48}$Ti$+^{238}$U reaction using  x-ray detectors to identify proton numbers in the fragments \citep{morjean2017}, thus confirming the role of $Z=82$ ``magic'' shell in this reaction.
+
+\begin{figure}
+	\centerline{\includegraphics*[width=\textwidth]{../Figures/CaBk/ZAD.pdf}}
+	\caption{(a) Distribution of scattering angle $\theta_{c.m.}$ versus proton number $Z$ (ZAD). (b) Fragment proton number yield without (lighter shade) and with angular cut $\theta_{c.m.}>70$~degrees (darker shade). The vertical line represents potential proton shell gap.}
+	\label{fig:ZAD}
+\end{figure}
+
+\begin{figure}
+	\centerline{\includegraphics*[width=\textwidth]{../Figures/CaBk/NAD.pdf}}
+	\caption{(a) Distribution of scattering angle $\theta_{c.m.}$ versus neutron number $N$ (NAD). (b) Fragment neutron number yield without (lighter shade) and with angular cut $\theta_{c.m.}>70$~degrees (darker shade). The vertical lines represent potential neutron shell gaps.}
+	\label{fig:NAD}
+\end{figure}
+
+To investigate the role of potential shell effects in $^{48}$Ca$+^{249}$Bk quasifission, the correlations between proton and neutron numbers with scattering angles have been plotted in Figs.~\ref{fig:ZAD}(a) and \ref{fig:NAD}(a), respectively.
+Proton and neutron numbers yields are also shown in  Figs.~\ref{fig:ZAD}(b) and \ref{fig:NAD}(b), respectively.
+In addition to the total yields obtained without restriction on scattering angles and nucleon numbers (orange spectra), gates on quasifission fragments have also been used (rectangles in Figs.~\ref{fig:ZAD}(a) and \ref{fig:NAD}(a)) with $\theta_{c.m.}>70$ degrees for the light fragments and $\theta_{c.m.}<110$ degrees for the heavy ones.
+The resulting gated spectra are shown in purple in Figs.~\ref{fig:ZAD}(b) and \ref{fig:NAD}(b).
+
+The vertical dotted line in Fig.~\ref{fig:ZAD} shows the expected position of fragments affected by $Z=82$ shell effects.
+The heavy fragments seem to be systematically lighter, indicating that $Z=82$ may not play a significant role in this reaction.
+This is surprising as TDHF studies have shown the importance of this shell gap in quasifission for $^{40,48}$Ca,$^{48}$Ti+$^{238}$U \citep{wakhle2014,oberacker2014,morjean2017}.
+
+A similar comparison is made with the ``magic'' number $N=126$ in Fig.~\ref{fig:NAD}.
+Here, we see that some fragments are indeed formed with $N=126$.
+However, both the centroids of the ungated and gated distributions are shifted towards smaller neutron numbers.
+For the gated spectrum, the shift is relatively small as the peak is centered at $\overline{N}_{gated}\simeq124$. Nevertheless, spherical shell effects are known to be quite localized in the nuclear chart and this ``proximity'' may as well be coincidental.
+Other spherical shell effects are also excluded for both protons and neutrons.
+In particular, the quasifission peaks are far from $Z=50$ or $N=50$.
+
+This leaves us with potential deformed shell effects.
+For instance, the importance of octupole deformed shell gaps at $Z=52-56$ \citep{scamps2018} and $N=52-56$ \citep{scamps2019} have recently been shown to have an important role in driving heavy systems towards asymmetric fission.
+As a results of these gaps, the nuclei can easily acquire octupole deformations for a small cost (and sometimes even a gain) in energy.
+This is why their production as fission fragments is naturally favored, as the fissioning system has no choice but to go through a shape with a neck just before scission, imposing strong octupole deformations in the fragments.
+Despite its strong spherical shell effects which are expected to energetically favor its production, the formation of $^{132}$Sn as a fission fragment is hindered by its strong resistance to octupole deformations.
+This is not the case, however, of $^{208}$Pb which can easily acquire octupole deformations thanks to its low-lying octupole $3^-$ state.
+
+The orange vertical dotted line in Figure~\ref{fig:NAD} indicates the expected location of fragments affected by the $N=56$ octupole deformed shell gap.
+It matches very well the position of the gated peak, providing a plausible explanation for the origin of this narrow distribution of quasifission fragments at backward angles, corresponding to more central collisions.
+
+As discussed in Sec.~\ref{sec:MAD}, however, more peripheral collisions ($\theta_{c.m.}<70$ degrees for the light fragment) lead to the production of slightly more symmetric quasifission fragments.
+For the light fragment, the $Z$ and $N$ distributions of these more peripheral quasifission events [see Figs.~\ref{fig:ZAD}(a) and \ref{fig:NAD}(b)] seem to be centered around $\overline{N}_{periph}\approx60$ and $\overline{Z}_{periph}\approx40$, respectively, indicating the production of fragments in the $^{100}$Zr region.
+Similar observations were already made in $^{40,48}$Ca+$^{238}$U systems \citep{oberacker2014}.
+\begin{figure}
+	\centerline{\includegraphics*[width=\textwidth]{../Figures/CaBk/NZ.pdf}}
+	\caption{Distribution of proton number $Z$ versus neutron number $N$ of the fragments. The dashed line represents the $N/Z$ ratio of the compound nucleus.
+		The inset is a zoom around the light fragment. Thin dashed lines indicate the positions of $^{94}$Sr ($Z=38$, $N=56$) and $^{100}$Zr ($Z=40$, $N=60$).}
+	\label{fig:NZ}
+\end{figure}
+\begin{figure}
+	\centerline{\includegraphics*[width=\textwidth]{../Figures/CaBk/shapes.pdf}}
+	\caption{Isodensity surfaces at $\rho=0.1$~fm$^{-3}$ for $L=90\hbar$ and $\beta=120^{\circ}$ (top), and $L=60\hbar$ and $\beta=135^{\circ}$ (bottom), just after the breaking of the neck. The light fragment (right) in the top is a $^{94}$Sr ($Z=38$, $N=56$) and a $^{100}$Zr ($Z=40$, $N=60$) in the bottom. The contour line in the bottom represents the same density as in the top. }
+	\label{fig:shapes}
+\end{figure}
+
+Figure~\ref{fig:NZ}  shows the distribution of fragments in the $N$ and $Z$ plane.
+We see that, due to a strong symmetry energy, the fragments have $N/Z$ ratios very close to the one of the compound nucleus.
+Nevertheless, the light fragments are slightly more proton rich, and the heavy fragments more proton deficient, due to the stronger Coulomb repulsion in the latter.
+The production of fragments in the $^{100}$Zr region is confirmed in the inset of Fig.~\ref{fig:NZ}. We also see that the fragments with $N=56$ neutrons correspond essentially to $^{94}$Sr, as also illustrated in Fig.~\ref{fig:density}
+
+Shell effects are known to evolve with the deformation of the nucleus.
+To confirm the presence of shell effects, it is then necessary to verify that the deformation is the one expected to exhibit a shell gap.
+Typical isosurface densities for reactions just after scission leading to the production of a $^{100}$Zr (top) and of a $^{94}$Sr (bottom) fragment are shown in Fig.~\ref{fig:shapes}.
+In particular, the $^{94}$Sr fragment is quite compact with a strong octupole shape, similar to what is observed in fission of mercury isotopes producing $N=56$ fragments with to octupole shell gaps \citep{scamps2019}.
+The $^{100}$Zr fragment is also octupole deformed (as the density is shown just after breaking of the neck) but with a much more elongated shape.
+Neutron rich zirconium isotopes are indeed expected to exhibit strong quadrupole deformations \citep{lalazissis1999,blazkiewicz2005,hwang2006}.
+
+
+\section{Conclusions}\label{cabk:sec:conclusion}
+
+The $^{48}$Ca$+^{249}$Bk reaction, used experimentally to produce Tennessine ($Z=117$), has been studied at a center of mass energy of $234$~MeV with time-dependent Hartree-Fock simulations.
+Properties of quasifission fragments, such as mass, numbers of protons and neutrons, kinetic energy, and scattering angles have been studied systematically.
+
+Unlike previous TDHF studies of quasifission, a broad distribution of orientations of the target has been considered for the first time, allowing for the prediction of, e.g.,  mass yield characteristics that can be directly compared with experiment.
+Except for a few collisions compatible with fusion or long-time quasifission, the largely dominant outcome is fast quasifission.
+It is shown that the orientation has also a strong influence on the scattering angle.
+
+Fast quasifission produces peaks in the mass yield distribution for the projectile-like and target-like fragments with a width in good agreement with empirical estimates, despite the fact that the TDHF approach does not account for beyond mean-field fluctuations.
+Here, the observed fluctuations come mainly from the various orientations of the target in the entrance channel.
+
+The influence of shell effects on the formation of the fragments has been investigated.
+Unlike similar reactions with $^{238}$U targets, no influence of $^{208}$Pb is observed unambiguously.
+However, elongated fragments in the $^{100}$Zr region are produced in the more peripheral quasifission reactions.
+More central collisions consistently produce fragments with $N=56$ nucleons for all orientations.
+This is interpreted as an effect of octupole deformed shells favoring the production of fragments with pear shapes at scission.
+A similar effect has recently been discussed in the case of fission.
+
+This is the first indication of a potential influence of octupole shell gaps in quasifission.
+Its experimental confirmation would be particularly interesting as it would point towards strong similarities in how shell effects affect both fission and quasifission.
+These shell effects in the light fragments will be more easily investigated experimentally at backward angles.
+
+
+\section*{Acknowledgments}
+	We thank D. J. Hinde for useful discussions.
+	This work has been supported by the U.S. Department of Energy under grant No.
+	DE-SC0013847 with Vanderbilt University and by the
+	Australian Research Council Discovery Project (project numbers DP160101254 and DP190100256) funding schemes.
 
 
 \clearpage
