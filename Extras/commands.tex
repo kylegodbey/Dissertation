@@ -254,7 +254,7 @@
 
 % - Within equation
 \newcommand{\kmsmpc}{\>{\rm km}\,{\rm s}^{-1}\,{\rm Mpc}^{-1}}
-\newcommand{\kms}{\>{\rm km}\,{\rm s}^{-1}}
+%\newcommand{\kms}{\>{\rm km}\,{\rm s}^{-1}}
 \newcommand{\pc}{\>{\rm pc}}
 \newcommand{\cm}{\>{\rm cm}}
 \newcommand{\Gpc}{\>{\rm Gpc}}
@@ -354,6 +354,226 @@
 
 % space
 \newcommand{\sdf}{\,\,}
+
+\newcommand{\si}{\sigma}
+\newcommand{\al}{\alpha}
+\newcommand{\tet}{\theta}
+\newcommand{\az}{\varphi}
+\newcommand{\ro}{\rho}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+\newcommand{\et}{\eta}
+\newcommand{\tro}{\tilde{\rho}}
+\newcommand{\na}{\nabla}
+\newcommand{\vsi}{\mbox{\boldmath{$\sigma$}}}
+\newcommand{\vna}{\mbox{\boldmath{$\na$}}}
+\newcommand{\Del}{\Delta}
+\newcommand{\ka}{\kappa}
+
+\newcommand{\oeq}{\begin{equation}}
+\newcommand{\ceq}{\end{equation}}
+\newcommand{\oeqn}{\begin{eqnarray}}
+\newcommand{\ceqn}{\end{eqnarray}}
+
+
+% delimitators
+\renewcommand{\>}{\rangle}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+\renewcommand{\lll}{\left|}
+\newcommand{\rll}{\right|}
+
+
+% space
+\newcommand{\stf}{\,\,\,}
+\newcommand{\stb}{\!\!\!}
+\newcommand{\sdb}{\!\!}
+\newcommand{\stxt}{$\,\,$}
+
+
+% kets
+\renewcommand{\k}{|}
+\newcommand{\kfi}{|\phi \>}
+\newcommand{\kfiQ}{|\phi_Q \>}
+\newcommand{\kpsi}{|\psi \>}
+\newcommand{\kpsit}{|\psi (t)\>}
+\newcommand{\kaz}{|\varphi \>}
+\newcommand{\kJ}{|J \>}
+\newcommand{\kJMfi}{|JM\phi \>}
+\newcommand{\kJM}{|JM \>}
+\newcommand{\kJK}{|JK \>}
+\newcommand{\kJQ}{|J_Q \>}
+\newcommand{\km}{|m \>}
+\newcommand{\kmp}{|m' \>}
+\newcommand{\kms}{|m\si \>}
+\newcommand{\kmsp}{|m'\si' \>}
+\newcommand{\kx}{| x \>}
+\newcommand{\kxp}{| x' \>}
+\newcommand{\ky}{|y\>}
+\newcommand{\kal}{|\al\>}
+\newcommand{\ks}{|s\>}
+\newcommand{\ksp}{|s'\>}
+\newcommand{\kvac}{|-\>}
+\newcommand{\knu}{|\nu\>}
+\newcommand{\kmu}{|\mu\>}
+\newcommand{\kPsi}{|\Psi\>}
+
+
+% bra
+\newcommand{\bJK}{\< JK | }
+\newcommand{\bfiQ}{\<\phi_Q |}
+\newcommand{\bfi}{\<\phi |}
+\newcommand{\baz}{\<\varphi |}
+\renewcommand{\bm}{\<m |}
+\newcommand{\bmp}{\<m' |}
+\newcommand{\bms}{\<m \si|}
+\newcommand{\bmsp}{\<m' \si'|}
+\newcommand{\bpsit}{\< \psi (t) |}
+\newcommand{\brax}{\< x |}
+\newcommand{\bxp}{\< x' |}
+\newcommand{\bal}{\<\al|}
+\newcommand{\bras}{\< s |}
+\newcommand{\bsp}{\< s' |}
+\newcommand{\bvac}{\< - |}
+\newcommand{\bmu}{\<\mu|}
+\newcommand{\bnu}{\<\nu|}
+\newcommand{\bpsi}{\<\psi|}
+\newcommand{\bPsi}{\<\Psi|}
+
+
+% operators
+\newcommand{\obQ}{\hat{b}_Q}
+\newcommand{\obM}{\hat{b}_M}
+\newcommand{\obD}{\hat{b}_D}
+\newcommand{\oxD}{\hat{x}_D}
+\newcommand{\obQd}{\hat{b}_Q^\dagger}
+\newcommand{\obDd}{\hat{b}_D^\dagger}
+\newcommand{\obMd}{\hat{b}_M^\dagger}
+\newcommand{\oQ}{\hat{Q}}
+\newcommand{\oQD}{\hat{Q}_D}
+\newcommand{\oX}{\hat{X}}
+\newcommand{\oY}{\hat{Y}}
+\newcommand{\oP}{\hat{P}}
+\newcommand{\oM}{\hat{M}}
+\newcommand{\oH}{\hat{H}}
+\newcommand{\oK}{\hat{K}}
+\newcommand{\ox}{\hat{x}}
+\newcommand{\oy}{\hat{y}}
+\newcommand{\oz}{\hat{z}}
+\newcommand{\orr}{\hat{r}}
+\newcommand{\oV}{\hat{V}}
+\newcommand{\oU}{\hat{U}}
+\newcommand{\oD}{\hat{D}}
+\newcommand{\oR}{\hat{R}}
+\newcommand{\oJ}{\hat{J}}
+\newcommand{\oJz}{\hat{J}_z}
+\newcommand{\oro}{\hat{\rho}}
+\newcommand{\oh}{\hat{h}}
+\newcommand{\otu}{\hat{\tau}_{12}}
+\newcommand{\otd}{\hat{\tau}_{3}}
+\newcommand{\oZ}{\hat{Z}}
+\newcommand{\oPZ}{\hat{P}_{Z_0}}
+\newcommand{\oPZp}{\hat{P}_{Z_{0_p}}}
+\newcommand{\osi}{\hat{\sigma}}
+\newcommand{\ovr}{\hat{\bf r}}
+\newcommand{\ovp}{\hat{\bf p}}
+\newcommand{\ovR}{\hat{\bf R}}
+\newcommand{\oT}{\hat{T}}
+\newcommand{\oVb}{\hat{\bar{V}}_{12}}
+\newcommand{\op}{\hat{p}}
+\newcommand{\oVs}{\hat{V}_{12}}
+\newcommand{\of}{\hat{f}}
+\newcommand{\oft}{\hat{\tilde{f}}}
+\newcommand{\orot}{\hat{\tilde{\ro}}}
+\newcommand{\oht}{\hat{\tilde{h}}}
+\newcommand{\oUt}{\hat{\tilde{U}}}
+\newcommand{\ofb}{\hat{\breve{f}}}
+\newcommand{\orob}{\hat{\breve{\ro}}}
+\newcommand{\ohb}{\hat{\breve{h}}}
+\newcommand{\oUb}{\hat{\breve{U}}}
+\newcommand{\oad}{\hat{a}^\dagger}
+\newcommand{\oa}{\hat{a}}
+\newcommand{\oA}{\hat{A}}
+\newcommand{\oB}{\hat{B}}
+\newcommand{\oF}{\hat{F}}
+\newcommand{\oN}{\hat{N}}
+\newcommand{\ob}{\hat{b}}
+\newcommand{\obd}{\hat{b}^\dagger}
+\newcommand{\oL}{\hat{L}}
+\newcommand{\ovsi}{\hat{\boldsymbol{\sigma}}}
+\newcommand{\odel}{\hat{\delta}}
+\newcommand{\ovk}{\hat{\bf k}}
+\newcommand{\oO}{\hat{O}}
+\newcommand{\ov}{\hat{v}}
+\newcommand{\obe}{\hat{\beta}}
+\newcommand{\obed}{\hat{\beta}^\dagger}
+\newcommand{\oq}{\hat{q}}
+
+% differentials
+\newcommand{\del}{\delta\!}
+\newcommand{\dt}{\frac{\partial}{\partial t}}
+\newcommand{\dr}{\frac{\partial}{\partial r}}
+\newcommand{\dR}{\frac{\partial}{\partial R}}
+\newcommand{\ddR}{\frac{\partial^2}{\partial R^2}}
+\renewcommand{\d}{{\mbox d}}
+\newcommand{\dx}{\frac{\partial}{\partial x}}
+
+% integrals
+\newcommand{\iin}{\int\!\!\!\!\int}
+
+% constants
+\newcommand{\hb}{\hbar}
+
+% vectors
+\renewcommand{\vr}{{\bf r}}
+\newcommand{\vrr}{{\bf r},{\bf r'}}
+\newcommand{\vrsrs}{{\bf r}\si,{\bf r'}\si'}
+\newcommand{\vs}{{\bf s}}
+\newcommand{\vj}{{\bf j}}
+\newcommand{\vT}{{\bf T}}
+\newcommand{\vJ}{{\bf J}}
+\newcommand{\vk}{{\bf k}}
+\newcommand{\vK}{{\bf K}}
+\newcommand{\vv}{{\bf v}}
+\newcommand{\vu}{{\bf u}}
+\newcommand{\vV}{{\bf V}}
+\newcommand{\vW}{{\bf W}}
+\newcommand{\vC}{{\bf C}}
+\newcommand{\vux}{{\bf u_x}}
+\newcommand{\vS}{{\bf S}}
+\newcommand{\vL}{{\bf L}}
+\newcommand{\vp}{{\bf p}}
+\newcommand{\vP}{{\bf P}}
+\newcommand{\ve}{{\bf e}}
+\newcommand{\vn}{{\bf n}}
+
+% math-caligraphical letter
+\newcommand{\mR}{{\mathcal{R}}}
+\newcommand{\mN}{{\mathcal{N}}}
+\newcommand{\mD}{{\mathcal{D}}}
+\newcommand{\mP}{{\mathcal{P}}}
+\newcommand{\mA}{{\mathcal{A}}}
+\newcommand{\mL}{{\mathcal{L}}}
+
+% nuclei
+\newcommand{\Ox}{$^{16}$O}
+\newcommand{\Mg}{$^{24}$Mg}
+\newcommand{\Ca}{$^{40}$Ca}
+\newcommand{\Pb}{$^{208}$Pb}
+
+%symbols
+\renewcommand{\inf}{\infty}
+\newcommand{\Tr}{\mbox{Tr}}
+\newcommand{\tr}{\mbox{tr}}
+
+% tilde letters
+\newcommand{\tx}{\tilde{x}}
+\newcommand{\tp}{\tilde{p}}
+\renewcommand{\th}{\tilde{h}}
+\newcommand{\tU}{\tilde{U}}
+\newcommand{\tV}{\tilde{V}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%% ------ Notes, comments, etc. ------ %%%%%%%%%%%%%%%%%%

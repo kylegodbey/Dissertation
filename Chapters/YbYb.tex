@@ -1,0 +1,412 @@
+% For Phys. Rev. appearance, change preprint to twocolumn.
+% % Choose pra, prb, prc, prd, pre, prl, prstab, or rmp for journal
+\tolerance=10000
+\hbadness=10000
+\vbadness=10000
+
+\documentclass[reprint,aps,prc,twocolumn,superscriptaddress,floatfix,10pt]{revtex4-2}
+
+\usepackage{bm}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{color}
+%\usepackage{longtable}
+\usepackage{fix-cm}
+\usepackage{mathptmx} % rm & math\\
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+%\raggedbottom
+% no line skip between bibliography items like the production
+\setlength{\bibsep}{0.0pt}
+% remove the extra blank between multiple citations [a, b]===>[a,b] like in production
+\makeatletter
+\def\NAT@def@citea{\def\@citea{\NAT@separator}}
+\makeatother
+
+\begin{document}
+
+\title{Microscopic predictions for production of neutron rich nuclei in the reaction $^\mathbf{176}\mathbf{Yb}+{}^\mathbf{176}\mathbf{Yb}$}
+
+% Force line breaks with,put space between initials \\
+\author{K. Godbey}\email{kyle.s.godbey@vanderbilt.edu}
+\affiliation{Department of Physics and Astronomy, Vanderbilt University, Nashville, Tennessee 37235, USA}
+\author{C. Simenel}\email{cedric.simenel@anu.edu.au}
+\affiliation{Department of Theoretical Physics and Department of Nuclear Physics, Research School of Physics, The Australian National University, Canberra ACT 2601, Australia}
+\author{A. S. Umar}\email{umar@compsci.cas.vanderbilt.edu}
+\affiliation{Department of Physics and Astronomy, Vanderbilt University, Nashville, Tennessee 37235, USA}
+
+\date{\today}
+
+%------------------------------------------------------------------------------
+
+\begin{abstract}
+% the extra lines centers the abstract like the final PRC document
+\edef\oldrightskip{\the\rightskip}
+\begin{description}
+\rightskip\oldrightskip\relax
+\setlength{\parskip}{0pt} % no skip between items
+\item[Background]
+Production of neutron-rich nuclei is of vital importance to both understanding nuclear structure far from stability and to informing astrophysical models of the rapid neutron capture process (r-process). Multinucleon transfer (MNT) in heavy-ion collisions offers a possibility to produce neutron-rich nuclei far from stability.
+\item[Purpose]
+The $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ reaction has been suggested as a potential candidate to explore the neutron-rich region surrounding the principal fragments. The current study has been conducted with the goal of providing guidance for future experiments wishing to study this (or similar) system.
+\item[Methods]
+Time-dependent Hartree-Fock (TDHF) and its time-dependent random-phase approximation (TDRPA) extension are used to examine both scattering and MNT characteristics in $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$. TDRPA calculations are performed to compute fluctuations and correlations of the neutron and proton numbers, allowing for estimates of primary fragment production probabilities. 
+\item[Results]
+Both scattering results from TDHF and transfer results from the TDRPA are presented for different energies, orientations, and impact parameters.
+In addition to fragment composition, scattering angles and total kinetic energies, as well as correlations between these observables are presented.
+\item[Conclusions]
+$^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ appears to be an interesting probe for the mid-mass neutron-rich region of the chart of nuclides. The predictions of both TDHF and TDRPA are speculative, and will benefit from future experimental results to test the validity of this approach to studying MNT in heavy, symmetric collisions.
+\end{description}
+
+\end{abstract}
+\maketitle
+%------------------------------------------------------------------------------
+
+\section{Introduction}
+
+The synthesis of neutron-rich nuclei is one of the most exciting and challenging tasks in both experimental and theoretical nuclear physics.
+From the lightest systems to the superheavy regime, knowledge about the nuclei at the extremes of the chart of nuclides is vital to understanding physical phenomena at multiple scales.
+At the foremost, neutron-rich nuclei are at the literal and figurative center of the rapid neutron capture process (r-process).
+Attempts at modeling the r-process utilize input from nuclear models to inform threshold energies for the reaction types that characterize this process~\cite{cowan2019}.
+Thus, strong theoretical understanding of both the static and dynamic properties of nuclei far from stability can give vital insight into the formation of stable heavy nuclei.
+
+The production of neutron-rich nuclei is also of interest for studying nuclear structure, where exploring this region of the nuclear landscape clearly probes the edges of our current understanding of how finite nuclei form and are composed~\cite{otsuka2018}. %,heyde2011}.
+This includes studies of neutron-rich nuclei of all masses, ranging from oxygen~\cite{desouza2013} up to the superheavy element (SHE) region.
+SHEs are of particular note, as the formation and static properties of said nuclei have been the focus of many experimental~\cite{hofmann2002,munzenberg2015,morita2015,oganessian2015,roberto2015} and theoretical~\cite{bender1999,nazarewicz2002, cwiok2005,pei2009a,stone2019} studies.
+
+Over the years, many theoretical approaches to studying neutron-rich nuclei formation have been pursued for various reaction types.
+One such technique is to use models to study neutron enrichment via multinucleon transfer (MNT) in deep-inelastic collisions (DIC) and  quasifission reactions~\cite{adamian2003,zagrebaev2007,umar2008a,golabek2009,aritomo2009,kedziora2010,zhao2016,sekizawa2017a,wu2019}.
+While quasifission occurs at a much shorter time-scale than fusion-fission~\cite{toke1985,durietz2011} and is the primary reaction mechanism that limits the formation of superheavy nuclei, the fragments produced may still be neutron-rich.
+
+Quasifission reactions are often studied in asymmetric systems with, e.g., an actinide target \cite{toke1985,hinde1992,hinde1995,itkis2004,wakhle2014}.
+However, quasifission can also be present in symmetric systems. In fact, the extreme case of quasifission in
+ actinide-actinide collisions has been suggested as a possible reaction mechanism to obtain neutron-rich isotopes of high $Z$ nuclei in particular as well as a possible means to search for SHE~\cite{majka2018,wuenschel2018}.
+Theoretically, the investigation of actinide-actinide collisions has a rich history with various approaches, including the dinuclear system (DNS) model~\cite{penionzhkevich2005,adamian2008,feng2009a,adamian2010,adamian2010b,feng2017,zhu2017,bao2018b}, relativistic mean-field (RMF) and Skyrme HF studies~\cite{gupta2007b}, reduced density-matrix formalism~\cite{sargsyan2009}, quantum molecular dynamics (QMD)~\cite{zhao2009}, and improved quantum molecular dynamics (ImQMD)~\cite{tian2008,zhao2016,wang2016,yao2017,li2018} calculations, as well as time-dependent Hartree-Fock (TDHF) studies~\cite{cusson1980,golabek2009,kedziora2010}.
+Over recent years, TDHF has proved to be a tool of choice to investigate fragment properties produced in various reactions, such as DIC~\cite{umar2017,wu2019},  quasifission~\cite{wakhle2014,oberacker2014,hammerton2015,umar2015c,umar2016,wang2016,sekizawa2017a,godbey2019,jiang2020}, and fission~\cite{simenel2014a,scamps2015a,goddard2015,tanimura2015,goddard2016,bulgac2016,tanimura2017,scamps2018,bulgac2018,scamps2019}.
+Recent reviews~\cite{simenel2018,sekizawa2019} succinctly summarize the current state of TDHF (and its extensions) as it has been applied to various MNT reactions.
+
+In this work, we present a study of the $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ system using TDHF and the time-dependent random phase approximation (TDRPA) extension that considers the effect of one-body fluctuations around the TDHF trajectory.
+As discussed before, microscopic approaches such as TDHF and its extensions are commonly used in heavy-ion collision studies in different regions of the nuclear chart, positioning TDHF and TDRPA as tools of choice for the current investigation.
+Symmetric $^{176}$Yb reactions were chosen because they are considered as a potential candidate to  explore the neutron-rich region around the mass region $A\sim 170-180$ of the nuclear chart.
+Specifically, an experimental investigation of this reaction are being considered in Dubna by Oganessian \textit{et al.} and the work presented here was undertaken at their suggestion~\cite{priv_oganessian}.
+The base theory (TDHF) and the primary extension (TDRPA) are briefly described in Section~\ref{sec:TDHF}.
+Results for both scattering characteristics and transfer characteristics are discussed in Section~\ref{sec:scat} and Section~\ref{sec:tran} respectively.
+A summary and outlook are then presented in Section~\ref{sec:conclusions}.
+
+%------------------------------------------------------------------------------
+
+%\cite{prasad2016}
+
+\section{Formalism: TDHF and TDRPA} \label{sec:TDHF}
+
+The TDHF theory provides a microscopic approach with which one may investigate a wide range of phenomena observed in low energy nuclear physics~\cite{negele1982,simenel2012,simenel2018,sekizawa2019}.
+Specifically, TDHF provides a dynamic quantum many-body description of nuclear reactions in the vicinity of the Coulomb barrier, such as fusion~\cite{bonche1978,flocard1978,simenel2001,umar2006d,washiyama2008,umar2010a,umar2009a,guo2012,keser2012,simenel2013a,oberacker2012,oberacker2010,umar2012a,simenel2013b,umar2014a,jiang2014} 
+and transfer reactions~\cite{koonin1977,simenel2010,simenel2011,umar2008a,sekizawa2013,scamps2013a,sekizawa2014,bourgin2016,umar2017,sekizawa2019}.
+
+The TDHF equations for the single-particle wave functions
+\begin{equation}
+h(\{\phi_{\mu}\}) \ \phi_{\lambda} (r,t) = i \hbar \frac{\partial}{\partial t} \phi_{\lambda} (r,t)
+\ \ \ \ (\lambda = 1,...,A) \ ,
+\label{eq:TDHF}
+\end{equation}
+can be derived from a variational principle.
+The principal approximation in TDHF is that the many-body wave function $\Phi(t)$  is assumed to be a single time-dependent Slater determinant at all times.
+It describes the time-evolution of the single-particle wave functions in a mean-field corresponding to the dominant reaction channel.
+During the past decade it has become numerically feasible to perform TDHF calculations on a 3D Cartesian grid without any symmetry restrictions and with much more accurate numerical methods~\cite{bottcher1989,umar2006c,sekizawa2013,maruhn2014}.
+
+The main limitation in the TDHF theory when studying features like particle transfer, however, is that it is optimized for the prediction of expectation values of one-body observables~\cite{balian1981} and will under-predict fluctuations of those observables~\cite{dasso1979}. 
+This is due to the fact that the fluctuation of one-body operators (such as the particle number operator) includes the expectation value of the square of a one-body operator,
+\begin{equation}
+\sigma_{XX}=\sqrt{\langle\hat{X}^2\rangle - \langle\hat{X}\rangle^2},
+\label{eq:fluc}
+\end{equation}
+that is outside the variational space of TDHF \cite{balian1981}.
+
+To obtain such quantities one needs to go beyond standard TDHF and consider the fluctuations around the TDHF mean-field trajectory using techniques like the stochastic mean-field theory (SMF)~\cite{ayik2008,lacroix2014} or TDRPA~\cite{balian1984}, both of these approaches have been used to investigate MNT and fragment production~\cite{ayik2016,ayik2017,ayik2018,ayik2019,ayik2019b,marston1985,bonche1985,broomfield2008,broomfield2009,simenel2011,williams2018}.
+The advantage of these methods compared to others mentioned in the Introduction is that they do not rely on 
+empirical parameters and are fully microscopic.
+In this work we follow a similar approach as in~\cite{simenel2011,williams2018} to obtain particle number fluctuations and distributions about the outgoing fragments.
+
+The foundation of the method is to consider an alternate variational principle for generating the mean-field theory.
+In particular, the Balian-V\`en\`eroni (BV) variational principle provides a powerful technique that optimizes the evaluation of expectation values for arbitrary operators~\cite{balian1984,bonche1985}.
+When the operator chosen is a one-body operator, the method produces the TDHF equations exactly, suggesting that TDHF is the mean-field theory that is best suited for the calculation of one-body expectation values.
+However, as mentioned above, the calculation of fluctuations and correlations involves the square of a one-body operator.
+For TDHF alone, Eq.~\ref{eq:fluc} results in the following expression for two generic operators $\hat{X}$ and $\hat{Y}$,
+\begin{equation}
+	\sigma_{XY}^2(t_f)=\mathrm{Tr}\left\{Y\rho(t_f)X[I-\rho(t_f)] \right\},
+\end{equation}
+where $I$ is the identity matrix and $t_f$ is the final time.
+By utilizing the BV variational principle and extending the variational space to optimize for the expectation value of squares of one-body operators, one obtains
+\begin{equation}
+	\sigma_{XY}^2(t_f)=\lim_{\epsilon\rightarrow0}\frac{\mathrm{Tr}\left\{[\rho(t_i)-\rho_X(t_i,\epsilon)][\rho(t_i)-\rho_Y(t_i,\epsilon)]\right\}}{2\epsilon^2}
+	\label{eq:BVfluc}
+\end{equation}
+which now depends on the one-body density matrices at the initial time $t_i$.
+Equation~(\ref{eq:BVfluc}) also contains the density matrices $\rho_{X,Y}(t_i,\epsilon)$ which have been boosted at $t_f$ and evolved back to $t_i$.
+
+The procedure to compute Eq.~(\ref{eq:BVfluc}) involves first transforming the states after the collision as
+\begin{equation}
+\tilde{\phi}^X_\alpha(r,t_f)=\exp[-i\epsilon N_X\Theta_V({r})]\phi_\alpha(r,t_f),\label{eq:phi_x}
+\end{equation}
+where $X$ stands for neutron ($N$), proton ($Z$), or total nucleon number ($A$).
+The operator $N_X$ ensures that the transformation acts only on nucleons with the correct isospin, with $N_A=1$, $N_Z=\frac{1-\tau_3}{2}$, and $N_N=\frac{1+\tau_3}{2}$.  
+The operator $\Theta_V(\hat{r})$ is a step function that is either $1$ or $0$ depending on whether $r$ is within a volume of space, $V$, delimiting the fragment of interest.
+Finally, $\epsilon$ is a small number that is varied to achieve convergence.
+
+These transformed states are then propagated backwards in time from the final time $t_f$ to the initial time $t_i$.
+The trace in Eq.~(\ref{eq:BVfluc}) can then be calculated, obtaining
+\begin{equation}\label{eq:sigma}
+\sigma_{XY} = \sqrt{\lim_{\epsilon\rightarrow0}\frac{\eta_{00}+\eta_{XY}-\eta_{0X}-\eta_{0Y}}{2\epsilon^2}},
+\end{equation}
+with $\eta_{XY}$ describing the overlap between the states at  time $t=t_i$,
+\begin{equation}
+\eta_{XY}=\sum_{\alpha \beta}\left|\langle\phi_\alpha^X(t_i)|\phi_\beta^Y(t_i)\rangle\right|^2.
+\end{equation}
+In the case of $X,Y=0$, this refers to states obtained with $\epsilon=0$ in Eq.~(\ref{eq:phi_x}).
+In principle, one should recover exactly the initial state as the evolution is unitary.
+However, using states that have been evolved forward and then backward in time with $\varepsilon=0$ minimizes systematic errors from numerical inaccuracies \cite{bonche1985,broomfield2009}. 
+
+\begin{figure}[!htb]
+	\includegraphics*[width=8.6cm]{Potentials.pdf}
+	\caption{\protect(Color online). Static nuclear potentials for $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ in the side-side (blue (dark) lines) and tip-tip (green (light) lines) orientations from FHF and DCFHF.}
+	\label{fig:pot}
+\end{figure}
+
+The SLy4$d$ parametrization of the Skyrme functional is used~\cite{kim1997} and
+all calculations were performed in a numerical box with $66 \times 66$ points in the reaction plane, and 36 points along the axis perpendicular to the reaction plane.
+The grid spacing used was a standard $1.0$~fm which provides an excellent numerical representation of spatial quantities using the basis spline collocation method~\cite{umar1991a}.
+For the TDRPA calculations, each initial orientation, energy, and impact parameter resulted in three additional TDHF evolutions (one for each $X$) for the time reversed evolution at one value of $\epsilon=2\times10^{-3}$ in addition to occasionally scanning $\epsilon$ to ensure convergence of Eq.~(\ref{eq:sigma}).
+In total, $200$ full TDHF evolutions were required for the results presented in this work with each taking on the order of $10\sim55$~hours of wall time due to the large, three-dimensional box size chosen.
+This corresponds to roughly $250$ days of computation time split among multiple nodes for the $^{176}$Yb HF ground state configuration with a prolate deformation. 
+%of the $^{176}$Yb nucleus.
+%Additional calculations were also performed for the alternate deformation, requiring nearly the same computational effort.
+
+The proton and neutron numbers correlations and fluctuations computed with TDRPA are used to estimate probabilities for the formation of a given nuclide using 
+ Gaussian bivariate normal  distributions of the form
+\begin{equation}
+\mathcal{P}(n,z) = \mathcal{P}(0,0)\exp\left[ -\frac{1}{1-\rho^2} \left( \frac{n^2}{\sigma_{NN}^2}+\frac{z^2}{\sigma_{ZZ}^2} - \frac{2\rho nz}{\sigma_{NN}\sigma_{ZZ}}\right) \right], 
+\label{eq:Pnz}
+\end{equation}
+where $n$ and $z$ are the number of transferred neutrons and protons, respectively.  
+The correlations between $N$ and $Z$ are quantified by the parameter
+\begin{equation}
+\rho = \mbox{sign}(\sigma_{NZ})\frac{\sigma_{NZ}^2}{\sigma_{NN}\sigma_{ZZ}}=\frac{\langle nz\rangle}{\sqrt{\langle n^2\rangle\langle z^2\rangle}}.
+\end{equation}
+In principle, $n$ and $z$ could be very large and lead to unphysical predictions with fragments having, e.g., a negative number of protons and neutrons, or more nucleons than available. 
+In practice, such spurious results could only happen for the most violent collisions where the fluctuations are large.  
+To avoid such spurious effects, the probabilities are shifted so that $\mathcal{P}$ is zero when one fragment has all (or more) protons or neutrons. 
+The resulting distribution is then normalized. 
+
+Although the $^{176}$Yb nuclide is in a region where shape coexistence is often found~\cite{fu2018,nomura2011,robledo2009,sarriguren2008,xu2011}, TDHF calculations can only be performed with one well-defined deformation (and orientation) of each collision partners in the entrance channel. 
+In our calculations, the ground state is found to have a prolate deformation with $\beta_2\simeq 0.33$ in its HF ground state.
+A higher energy oblate solution is also found with a difference of around $5$~MeV in total binding energy.
+A set of calculations were also performed for the oblate solution, though the overall transfer behavior was found to be similar for both deformations despite the oblate one resulting in slightly lower fluctuations.
+In the following, we thus only show results for the prolate ground state. 
+
+This deformation allows for possible choices of the orientation of the nuclei. 
+Extreme orientations are called ``side'' (``tip'') when the deformation axis is initially perpendicular (parallel) to the collision axis. 
+Although various intermediate orientations could be considered~\cite{godbey2019}, we limit our study to tip-tip and side-side orientations where the initial orientations of both nuclei are identical. 
+In addition to saving computational time, this restriction is necessary to ensure fully symmetric collisions and to avoid unphysical results in TDRPA~\cite{williams2018}.
+
+Figure~\ref{fig:pot} shows the nucleus-nucleus potentials computed using the frozen Hartree-Fock (FHF)~\cite{simenel2008,washiyama2008} and density-constrained frozen Hartree-Fock (DCFHF)~\cite{simenel2017} methods, 
+respectively neglecting and including the Pauli exclusion principle between the nucleons of different nuclei.
+Due to Pauli repulsion in DCFHF, the inner pocket potential is very shallow in the side-side configuration, and disappears in the tip-tip one. 
+In this work, the effect of the orientation is studied by comparing tip-tip and side-side configurations at a center of mass energy 
+$E_\mathrm{c.m.}=660$~MeV. 
+In addition, calculations are also performed at $E_\mathrm{c.m.}=880$~MeV for both orientations to investigate the role of the energy on the reaction outcome. 
+
+%------------------------------------------------------------------------------
+
+
+
+
+\section{Results}\label{sec:results}
+
+
+In this section we present the results of TDHF and TDRPA studies of $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ reactions at different center of mass energies and initial orientations  for a range of impact parameters.
+Both scattering features and particle number fluctuation derived quantities were calculated and are shown below.
+
+% Add subsections for different types of results
+
+\subsection{Scattering Characteristics}\label{sec:scat}
+
+The following section presents scattering results from the standard TDHF calculations of $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ collisions.
+The TDRPA extension to TDHF is not needed for these results, though this means the points can only be interpreted as the most likely outcome for each initial condition.
+
+\begin{figure}[!htb]
+	\includegraphics*[width=8.6cm]{Scattering.pdf}
+	\caption{\protect(Color online). Scattering angles for $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ collisions at center of mass energies (a) $\mathrm{E_{c.m.}}=660$~MeV and (b) $\mathrm{E_{c.m.}}=880$~MeV in the side-side (circles) and tip-tip (squares) orientations. The  dotted (dashed) line plots the Rutherford scattering angle for $\mathrm{E_{c.m.}}=660$~MeV ($880$~MeV).}
+	\label{fig:bvstheta}
+\end{figure}
+
+Scattering angles for the $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ system for both orientations are presented in Fig.~\ref{fig:bvstheta}. 
+A similar deviation from Rutherford scattering is observed at impact parameters $b\le8$~fm for both orientations. 
+These deviations are due to nuclear deflection and partial orbiting of the system.
+Note that no fusion is observed.
+The relatively flat shape of the curve around $50-60^\circ$ at 660~MeV and $20-40^\circ$ at 880~MeV implies a large number of events in these particular angular ranges.
+
+\begin{figure}[!htb]
+	\includegraphics*[width=8.6cm]{TKEL.pdf}
+	\caption{\protect(Color online). Total kinetic energies of the outgoing fragments in $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ collisions at center of mass energies $\mathrm{E_{c.m.}}=660$~MeV (blue circles) and $\mathrm{E_{c.m.}}=880$~MeV (red squares) in the side-side orientation.}
+	\label{fig:tke}
+\end{figure}
+
+The TKE of the outgoing fragments is plotted in Fig.~\ref{fig:tke} 
+as a function of the impact parameter $b$ for side-side collisions at the two center of mass energies.
+Although dissipation occurs at different impact parameter ranges ($b<10$~fm at $E_{c.m.}=660$~MeV and $b<12$~fm at $E_{c.m.}=880$~MeV), both curves exhibit similar behavior.
+In particular, the TKEs saturate at roughly the same energy ($\sim350-400$~MeV) indicating full damping of the initial TKE for the most central collisions.
+
+Among the mechanisms responsible for energy dissipation, nucleon transfer is expected to play an important role. 
+Of course, in symmetric collisions the average number of nucleons in the fragments does not change.
+Nevertheless, multinucleon transfer is possible thanks to fluctuations, leading to finite widths in the fragment particle number distributions. 
+These fluctuations are explored in the following section.
+%and thus the lower energy collision reaches the elastic regime at a lower impact parameter.
+
+%Knowledge of which initial configurations lead to quasi-elastic scattering provides insight as to which reactions will lead to large fluctuations in particle numbers as seen in the following section.
+% due to the increased contact between fragments, though fluctuations equilibrate at a certain point
+\subsection{Transfer Characteristics}\label{sec:tran}
+
+This section focuses on the results obtained by extending TDHF to recover particle number fluctuations and correlations with the TDRPA.
+
+\begin{figure}[!htb]
+	\includegraphics*[width=8.6cm]{Fluctuations.pdf}
+	\caption{\protect(Color online). TDRPA predictions of correlations $\sigma_{NZ}$ (a) and fluctuations $\sigma_{NN}$ (b) and $\sigma_{ZZ}$ (c) for $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ collisions for four initial configurations over a range of impact parameters.}
+	\label{fig:fluc}
+\end{figure}
+
+Particle number fluctuations ($\sigma_{ZZ}$ and $\sigma_{NN}$) and correlations ($\sigma_{NZ}$) calculated from Eq.~(\ref{eq:sigma}) are shown in Fig.~\ref{fig:fluc} as a function of  impact parameters for different initial conditions.
+The fluctuations are greater in general at the smaller impact parameters, though they do not converge to a single value.
+Similar variations in fluctuations were already observed in earlier TDRPA studies of deep inelastic collisions in lighter systems~\cite{simenel2011,williams2018}. 
+Particularly large values are sometimes obtained, such as at 660~MeV in tip-tip central ($b=0$) collisions, indicating approximately flat distributions around the TDHF average.
+
+\begin{figure}[!htb]
+	\includegraphics*[width=8.6cm]{MAD.pdf}
+	\caption{\protect(Color online). Mass angle distributions for $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ collisions at (a) $\mathrm{E_{c.m.}}=660$~MeV in the side-side orientation, (b) $\mathrm{E_{c.m.}}=660$~MeV in the tip-tip orientation, (c) $\mathrm{E_{c.m.}}=880$~MeV in the side-side orientation, and (d) $\mathrm{E_{c.m.}}=880$~MeV in the tip-tip orientation. The colorbar represents cross sections in millibarns per bin of mass ratio and degree.}
+	\label{fig:mad}
+\end{figure}
+
+\begin{figure}[!htb]
+	\includegraphics*[width=8.6cm]{MED.pdf}
+	\caption{\protect(Color online). Mass energy distributions for $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ collisions at (a) $\mathrm{E_{c.m.}}=660$~MeV in the side-side orientation, (b) $\mathrm{E_{c.m.}}=660$~MeV in the tip-tip orientation, (c) $\mathrm{E_{c.m.}}=880$~MeV in the side-side orientation, and (d) $\mathrm{E_{c.m.}}=880$~MeV in the tip-tip orientation. The colorbar represents cross sections in millibarns per bin of mass ratio and MeV.}
+	\label{fig:med}
+\end{figure}
+
+Fragment mass-angle distributions (MADs) are a standard tool used experimentally to interpret the dynamics of heavy-ion collisions \cite{toke1985,shen1987,hinde2008,simenel2012b,durietz2013,wakhle2014,hammerton2015,morjean2017,mohanto2018,hinde2018}.
+Although TDHF has been used to help interpret theoretically these distributions \cite{wakhle2014,hammerton2015,umar2016,sekizawa2016}, 
+these earlier calculations only incorporate fluctuations coming from the distribution of initial conditions (e.g., different orientations). 
+Here, we go beyond the mean-field prediction by including the fragment mass fluctuations from TDRPA.
+Note that we only include mass fluctuations, not fluctuations in scattering angle which are still determined solely by TDHF. 
+Calculating quantum fluctuations of scattering angles is beyond the scope of this work, although they might be necessary for a more detailed comparison with experimental MADs.
+
+The resulting MADs for $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ reactions are shown in Fig.~\ref{fig:mad}.
+The mass ratio $M_R$ is defined as the ratio of the fragment mass over the total mass of the system. 
+The distributions of mass ratios are determined assuming Gaussian distributions with standard deviation $\sigma_{M_R}=\sigma_{AA}/A$, limited and normalized to the physical region $0\le M_R\le1$ (see section~\ref{sec:TDHF}). 
+There is then an $M_R$ distribution per initial condition (defined by $E_{c.m.}$, $b$, and the orientations), but only a single scattering angle $\theta_{c.m.}$.
+To obtain a continuous representation of the scattering angle, $\theta_{c.m.}$ is discretized into bins of $\Delta\theta=1$ degree and interpolated between the values obtained by TDHF.
+
+% This is handled by the integration step, no?
+%A weighting factor $(b+\Delta b)^2-b^2$ is used so that the distribution is proportional to the differential cross-section.
+
+ 
+The figures are symmetric about 90$^{\circ}$ as both outgoing fragments are identically the same and will then travel outwards at complimentary angles.
+Specific orientations such as side-side and tip-tip will not be accessible in an experimental setting of course.
+%Nevertheless, the relative effect of varying the initial configuration is interesting and indicative of an influence of transfer.
+Interestingly, when investigating initial energy dependence of the MAD (compare panels (a) and (c), (b) and (d) in Fig.~\ref{fig:mad}), 
+it can be seen that different outgoing angles are preferred depending on the incoming center of mass energy with back (and forward) scattering events being more prevalent in the higher energy regime.
+%Conversely, the lower energy reaction tends towards a wider distribution at intermediate angles off the collision axis.
+
+This  agrees well with what is seen in Fig.~\ref{fig:bvstheta}, where many impact parameters result in  scattering angles around $50-60$~degrees at $E_{c.m.}=660$~MeV and around $20-40$~degrees at 880~MeV.
+This is the case for both tip-tip and side-side orientations, though the tip-tip results tend further towards the intermediate angles than side-side at the same energy.
+
+While the predictive capability of this method needs to be compared with experimental results and tested, this suggests a strong energy dependence and that detection of fragment production will greatly benefit from large angle detectors.
+The energy dependence seen in the MAD is not intuitive, and may prove to be useful for informing experimental setups.
+%In examining the effect of the initial fragment orientations it can be seen that the tip-tip collisions ((b) and (d))
+%the dependence on initial fragment orientation is more clear with glancing off-axis collisions around 90$^{\circ}$ having a larger peak in correlations at thebeing more prevalent in the Side-Side configuration where contact times 
+\begin{figure*}[htb]
+	\includegraphics*[width=12.9cm]{combinedchart.pdf}
+	\caption{\protect(Color online). Primary fragments production cross sections for $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ collisions at $\mathrm{E_{c.m.}}=660$~MeV in the side-side orientation overlaid onto the chart of nuclides. 
+	The innermost contour corresponds to a cross section of 1~millibarn, with subsequent contours drawn every 0.2~mb.
+	Finally, we also plot a boundary contour drawn at the microbarn level. Chart from~\cite{anu_chart}.}
+	\label{fig:chart}
+\end{figure*}
+
+Useful information can also be obtained from the correlations between fragment mass and kinetic energy \cite{itkis2004,itkis2011,itkis2015,kozulin2019,banerjee2019}.
+Figure~\ref{fig:med} presents mass energy distributions (MED) that detail the predicted TKE of outgoing fragments.
+It should be noted here that, while the theory provides particle number fluctuations, the values for TKE are single points (as in the case of $\theta_{c.m.}$) as predicted by TDHF alone.
+That is, widths of the TKE distributions are currently unknown with the method used here.
+This would make for an excellent extension to the theory, bringing it more in line with what can be experimentally observed.
+%With this limitation the distribution will under predict
+
+The MEDs exhibit a continuous broadening of the mass distribution with increasing energy dissipation. 
+The saturation of TKE lies around $350-400$~MeV for side-side collisions (see also Fig.~\ref{fig:tke}) and around $250-300$~MeV for tip-tip. 
+This difference between orientations is interesting as it indicates a larger kinetic energy dissipation with less compact configurations. 
+% as expected in that the saturation of TKE lies around the same values as seen in Fig.~\ref{fig:tke}.
+ A possible explanation is that the nuclei overlap at a larger distance in the tip-tip configuration, thus producing energy dissipation earlier in the collision process than in the side-side orientation. 
+ 
+In general, the MEDs show peaks around the elastic and fully damped regions which results from the large range of impact parameters contributing to both mechanisms.
+%Additionally, the tip-tip collisions saturate at a slightly lower energy and thus contribute more to this range of TKEs.
+%Like the MAD above, this technique is speculative and experimental confirmation is vital to ensure the validity of the approach to this particular class of systems.
+
+\subsection{Primary fragments production}
+
+Using the  correlations and fluctuations shown in Fig.~\ref{fig:fluc}, a map of probabilities can be made in the $N$--$Z$ plane assuming a modified Gaussian bivariate normal distribution (See section~\ref{sec:TDHF} and Eq.~(\ref{eq:Pnz})).
+This choice of using a Gaussian is the primary assumption when calculating probabilities and related quantities and may not accurately describe the true distribution far from the center.
+
+These probability distributions at multiple impact parameters can then be integrated over to produce a map of primary fragment production cross sections which is presented in Fig.~\ref{fig:chart} overlaid atop a section of the chart of nuclides in the region surrounding $^{176}$Yb~\cite{anu_chart}.
+As the probability distributions for each impact parameter will be centered around the $^{176}$Yb ($Z=70$, $N=106$) nuclide, the resulting cross sections are also symmetric about $^{176}$Yb.
+The inclusion of correlations between protons and neutrons via $\sigma_{NZ}$ more or less aligns the distribution parallel to the valley of stability  due to the symmetry energy.
+
+Subsequent decay of the fragments would inevitably bring the final products closer to the valley of stability.
+Here, our focus is on primary fragment productions and the prediction of evaporation residue cross-sections are beyond the scope of this work.
+In fact, experimental measurements of mass-angle distributions using time of flight techniques are for primary fragments as they assume two-body kinematics \cite{thomas2008}. 
+To estimate the evaporation residue cross-sections would require to first compute the excitation energy of the fragments and then predict their decay with a statistical model \cite{umar2017,sekizawa2017}. 
+
+One way to minimize evaporation is to consider less violent collisions. 
+In terms of primary fragment productions, 660 and 880~MeV center of mass energies are quite similar (this can be seen by the relatively similar particle number fluctuations in Fig.~\ref{fig:fluc}). 
+However, the higher energy will lead to more neutron evaporation and thus to less exotic evaporation residues. 
+Use of relatively neutron-rich $^{176}$Yb nuclei in symmetric collisions may then allow for this reaction to act as a probe of the neutron-rich region surrounding the principal outgoing fragment.
+
+%------------------------------------------------------------------------------
+
+\section{Summary and Discussion}\label{sec:conclusions}
+
+Multiple TDHF and TDRPA calculations have been performed for the $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ system with various initial orientations, energies, and impact parameters.
+Standard TDHF allows for the classification of general scattering characteristics, while the TDRPA technique extends the approach to include correlations and fluctuations of particle numbers of the reaction fragments.
+This extension provides a theoretical framework that more closely resembles what will be seen in experimental investigations of this (and similar) systems.
+
+In examining figures such as the mass-angle distributions in Fig.~\ref{fig:mad}, information regarding the angular distribution of fragments can be gleaned and suggest large acceptance detectors to maximize measurement capability.
+Mass-energy distributions shown in Fig.~\ref{fig:med} are also useful to investigate, e.g., the interplay between dissipation and fluctuations. 
+In both cases, however, fluctuations of $\theta_{c.m.}$ and of TKE are not predicted in the present study.
+The latter would require new implementations of the TDRPA to these observables, or the use of alternative approaches such as the stochastic mean-field theory \cite{tanimura2017} or an extension of the Langevin equation \cite{bulgac2019}. 
+Both methods have been recently used to investigate kinetic energy distributions in fission fragments. 
+In order to benchmark our theoretical methods as applied to symmetric heavy nuclei, all predictions presented in this study would greatly benefit from experimental verification.
+
+The methods used here provide a very powerful tool for investigating symmetric systems, though an important caveat should be discussed regarding the interpretation of these results.
+TDRPA produces only correlations and fluctuations, not the actual distributions themselves, which are then taken to be of a Gaussian nature.
+This assumption may break down when far from the center of the distribution or if the shape at the center itself is too flat and deviates sufficiently from a Gaussian behavior.
+It is then extremely important to compare with observations made in experimental studies such that we may better understand how to interpret the results coming from these methods.
+
+Regardless, the $^{176}\mathrm{Yb}+{}^{176}\mathrm{Yb}$ system presents itself as a viable candidate for studies of MNT processes and production of neutron rich nuclei in the region around $A\sim176$.
+The map of possible primary fragments loosely painted in Fig.~\ref{fig:chart} presents an exciting range of previously inaccessible nuclei, with the above caveat applying the further one goes from the center of the distribution.
+Another caveat is that the predicted distribution is for primary fragments only and that statistical decay should be included in order to predict fragment produced after evaporation, e.g., following \cite{sekizawa2017,umar2017,wu2019}.
+
+%------------------------------------------------------------------------------
+
+\begin{acknowledgments}
+We thank Yu. Ts. Oganessian and D. J. Hinde for stimulating discussions.
+This work has been supported by the U.S. Department of Energy under grant No.
+DE-SC0013847 with Vanderbilt University and by the
+Australian Research Councils Grant No. DP190100256.
+\end{acknowledgments}
+
+%------------------------------------------------------------------------------
+
+\bibliography{VU_bibtex_master}
+
+%------------------------------------------------------------------------------
+
+\end{document}

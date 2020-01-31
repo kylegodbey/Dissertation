@@ -3,200 +3,85 @@
 % To generate the final document, run latex, build and quick build commands
 % on the skeleton-thesis file not this one.
 
-\chapter{Absence of hindrance in microscopic \textsuperscript{12}C+\textsuperscript{12}C fusion study}\label{chapters:chapter_2}
+\chapter{Dependence of fusion on isospin dynamics}\label{chapters:chapter_2}
 \vspace{-7mm}
 
-\author[1]{K. Godbey}
-%\homepage[]{Your web page}
-%\thanks{}
-%\altaffiliation{}
-\affil[1]{Department of Physics and Astronomy, Vanderbilt University, Nashville, Tennessee 37235, USA}
+\author{K. Godbey}
+\affil{Department of Physics and Astronomy, Vanderbilt University, Nashville, TN 37235, USA}
+
+\author{A.S. Umar}
+\affil{Department of Physics and Astronomy, Vanderbilt University, Nashville, TN 37235, USA}
+
+\author{C. Simenel}
+\affil{Department of Nuclear Physics, Research School of Physics and Engineering, The Australian National University, Canberra ACT  2601, Australia}
 
 
-
-\author[2]{C. Simenel}
-%\homepage[]{Your web page}
-%\thanks{}
-%\altaffiliation{}
-\affil[2]{Department of Theoretical Physics and Department of Nuclear Physics, Research School of Physics and Engineering, The Australian National University,
-	Canberra ACT 2601, Australia}
-
-\author[1]{A. S. Umar}
-
-\date{\today}
 
 \section*{Abstract}
-	\edef\oldrightskip{\the\rightskip}
-
-		\rightskip\oldrightskip\relax
-		\setlength{\parskip}{0pt}
-		
-		[Background] Studies of low-energy fusion of light nuclei are important in astrophysical modeling, with small variations in reaction rates having a large impact on nucleosynthesis yields. Due to the lack of experimental data at astrophysical energies, extrapolation and microscopic methods are needed to model fusion probabilities.
-		
-		[Purpose] To investigate deep sub-barrier \textsuperscript{12}C+\textsuperscript{12}C fusion cross sections and establish trends for the S-factor.
-		
-		[Method] Microscopic methods based on static Hartree-Fock (HF) and time-dependent Hartree-Fock (TDHF) mean-field theory are used to obtain \textsuperscript{12}C+\textsuperscript{12}C ion-ion fusion potentials. Fusion cross sections and astrophysical S-factors are then calculated using the incoming wave boundary condition (IWBC) method.
-		
-		[Results] Both density-constrained frozen Hartree-Fock (DCFHF) and density-constrained TDHF (DC-TDHF) predict a rising S-factor at low energies, with DC-TDHF predicting a slight damping in the deep sub-barrier region ($\approx1$~MeV). Comparison between  DC-TDHF calculations and maximum experimental cross-sections in the resonance peaks are good. However the discrepancy in experimental low energy results inhibits interpretation of the trend.
-		
-		[Conclusions] Using the fully microscopic DCFHF and DC-TDHF methods, no S-factor maximum is observed in the \textsuperscript{12}C+\textsuperscript{12}C fusion reaction. In addition, no extreme sub-barrier hindrance is predicted at low energies. The development of a microscopic theory of fusion including resonance effects, as well as further experiments at lower energies must be done before the deep sub-barrier behavior of the reaction can be established. 
-
-
+	We introduce a new microscopic approach to calculate the dependence of fusion barriers and cross-sections on
+	isospin dynamics. The method is based on the time-dependent Hartree-Fock theory and
+	the isoscalar and isovector properties of the energy density functional (EDF). The contribution to
+	the fusion barriers originating from the isoscalar and isovector parts of the EDF is calculated.
+	It is shown that for non-symmetric systems the isovector dynamics influence the sub-barrier fusion
+	cross-sections. For most systems this results in an enhancement of the sub-barrier cross-sections,
+	while for others we observe differing degrees of hindrance.
+	We use this approach to provide an explanation of recently measured fusion cross sections which show a  enhancement at low $E_\mathrm{c.m.}$ energies
+	for the system $^{40}$Ca+$^{132}$Sn as compared to the more neutron-rich system
+	$^{48}$Ca+$^{132}$Sn, and discuss the dependence of sub-barrier fusion cross-sections on transfer.
+	
 \section{Introduction}
-\label{sec:intro}
-The study of sub-barrier fusion between light nuclei is of paramount importance to astrophysical applications ranging from element formation to accreting neutron star superbursts.
-The \textsuperscript{12}C+\textsuperscript{12}C fusion reaction in particular stands as a fundamental part of these processes.
-For example, large type~I x-ray bursts (known as superbursts) are suspected to arise from unstable thermonuclear carbon burning in neutron stars accreting material from their partner in binary systems~\citep{cumming2001,strohmayer2002}.
-Another example of the importance of this reaction is that it is  a vital step on the path to heavier nuclei in the final stages of the helium burning process~\citep{hoyle1954}.
-Reaction rates of \textsuperscript{12}C+\textsuperscript{12}C fusion influence both the immediate formation of A~$\geq 20$ systems and the creation of larger elements later in the nucleosynthesis processes.
 
-Despite their importance, the \textsuperscript{12}C+\textsuperscript{12}C fusion reaction rates at deep sub-barrier energies are poorly known. 
-Experimentally, this is of course due to the extremely low tunneling probabilities at astrophysical energies 
-and the relatively high backgrounds from unwanted reactions~\protect\citep{spillane2007,zickefoose2011}, 
-motivating for the development of new particle-$\gamma$ coincidence techniques to reduce this background \protect\citep{courtin2017,jiang2018}. 
-Resonances in the fusion excitation functions could also be present at deep sub-barrier energies \protect\citep{cooper2009,tumino2018} 
-and could potentially modify capture rates by orders of magnitudes in this energy range. 
-As a result, with current experimental uncertainties, 
-the bounds of the C-burning reaction rate curves result in a wide range of $s$-process and $p$-process abundances~\protect\citep{pignatari2012}.
-New measurements on nearby systems  like \textsuperscript{13}C+\textsuperscript{12}C \protect\citep{zhang2018}
-%and \textsuperscript{12}C+\textsuperscript{30}Si~\protect\citep{montagnoli2018} 
-have also been performed to establish bounds for the low energy behavior of \textsuperscript{12}C+\textsuperscript{12}C, 
-as the large resonances and oscillations in the sub-barrier region are absent from the asymmetric systems. 
+One of the major open questions in fusion reactions of exotic neutron-rich nuclei
+is the dependence of the fusion cross section on the neutron excess,
+or equivalently on the total isospin quantum number $T_z = (Z-N)/2$.
+This is a timely subject given the expected
+availability of increasingly exotic beams at rare isotope facilities\,\citep{balantekin2014}.
+The influence of isospin dynamics on fusion is also one of the key questions pertaining to the
+production of superheavy elements using neutron rich nuclei\,\citep{loveland2007}.
+Besides being a fundamental nuclear structure and reaction question, the answer to this inquiry
+is also vital to our understanding of the nuclear equation of state (EOS) and symmetry energy\,\citep{li2014}.
+The EOS plays a key role in elucidating the structure of exotic nuclei\,\citep{chen2015},
+the dynamics of heavy ion collisions\,\citep{danielewicz2002,tsang2009},
+the composition of neutron stars\,\citep{haensel1990,chamel2008,horowitz2004,utama2016}, and the mechanism of core-collapse supernovae\,\citep{bonche1981,watanabe2009,shen2011}.
+The influence of isospin flow during heavy-ion reaction is usually discussed in term of the
+$(N/Z)$ asymmetry of the target and projectile or the $Q$-values for nucleon transfer.
 
-On the theory side, predictions of fusion cross-sections at such low energies vary by orders of magnitude and are thus not able to confidently guide experiments. 
-To assist astrophysical models, attempts have been made to extrapolate \textsuperscript{12}C+\textsuperscript{12}C fusion cross sections to lower energies of astrophysical interest. 
-One common method of extrapolation involves fitting a phenomenological model describing S-factors or cross sections to experimental results and extrapolating the values to lower energies~\protect\citep{fowler1975,jiang2007}.
-The behavior of these models depend on the chosen formula for the fit, resulting in radically different outcomes.
-Furthermore, these models 
-%For instance, current models of the \textsuperscript{12}C+\textsuperscript{12}C reaction rates, 
-do not produce the required conditions for superbursts to occur in binary systems~\protect\citep{cumming2006}, indicating a need for other reactions to provide additional heat, or the presence of resonances~\protect\citep{cooper2009} not accounted for in these extrapolations. 
-%This possible resonance would be at an energy below current experimental capabilities, thus theoretical studies are important in examining this phenomenon~\protect\citep{umar2012a}. 
+The presence of positive $Q-$value transfer channels has been shown to enhance sub-barrier fusion in various systems~\citep{jiang2014a}.
+However, what affects the magnitude of this enhancement is still actively debated~\citep{kohley2011,kohley2013,kolata2012,jiang2015,liang2016}.
+In particular, recent experiments carried out
+with radioactive $^{132}$Sn beams and with stable $^{124}$Sn beams on
+$^{40,48}$Ca~\citep{kolata2012} and $^{58,64}$Ni~\citep{kohley2011} targets have shown that the enhancement is observed at much lower cross-sections in the heavier (Ni+Sn) systems~\citep{jiang2015} than in the lighter (Ca+Sn) ones.
+Various possible effects have been invoked to explain these observations~\citep{liang2016},
+such as a larger role of dissipation due to the increase of the charge product $Z_1Z_2$ of the collision partners~\citep{wolfs1987,evers2011,rafferty2016}.
+%J'en suis la
+It is also known that for systems with $Z_1Z_2\gtrsim1600$, the so-called quasifission, where the nuclei re-separate after a significant mass transfer, strongly hinders fusion~\citep{toke1985}.
 
+The effect of neutron transfer on fusion is traditionally described  within the coupled-channels (CC) method~\citep{rowley1992,esbensen1998,hagino2012}
+and models incorporating intermediate neutron
+rearrangements\,\citep{zagrebaev2003,zagrebaev2007c,karpov2015}.
+These approaches, however, model the transfer process on a schematic way
+and they require nuclear data which are often unknown for exotic nuclei.
+New approaches are then needed to describe realistically the effect of both proton and neutron transfers on fusion of stable and exotic nuclei.
+In particular, dissipation induced by transfer should be properly accounted for.
 
-%References~\protect\citep{spillane2007,zickefoose2011} also represent two different techniques in obtaining fusion cross sections, namely via $\gamma$ ray and charged particle detection of the evaporation residues, respectively.
-
-%Indeed, recent experimental results of \textsuperscript{13}C+\textsuperscript{12}C show an increasing S-factor at very low energies where the hindrance model predicts a sharp downturn~\protect\citep{zhang2018}.
-
-Theoretical developments to improve the description of sub-barrier fusion are based on various strategies.
-A common approach is to utilize a phenomenological nucleus-nucleus potential and calculating quantum tunneling probabilities for transmission through this potential.
-One such method utilizes the S\~ao Paulo potential, a model that is tuned for astrophysical applications. 
-This model allows for the inclusion of dynamical polarization of the incoming nuclei via an energy dependence of the potential~\protect\citep{gasques2004,gasques2005,gasques2007}.
-Alternatively, polarization effects can be included via the coupled-channels method based on a bare (energy independent) nucleus-nucleus potential, 
-e.g., calculated with a modified double-folding technique~\protect\citep{esbensen2011,jiang2013}.
-%The potential is then used in calculating fusion cross sections as before, though excitation channels are considered in addition to the bare nuclear potential to provide a more robust picture of fusion~\protect\citep{esbensen2011,jiang2013}.
-Deformation effects of \textsuperscript{12}C have also been investigated with potential models~\protect\citep{denisov2010c}, microscopic calculations~\protect\citep{heenen1981},
-and the time-dependent wave-packet method in an attempt to reproduce the resonances that show in \textsuperscript{12}C+\textsuperscript{12}C fusion~\protect\citep{diaz-torres2018}.
-%early adiabatic time-dependent DHF (ATDHF) calculations~\protect\citep{heenen1981}.
-%Even more, recent work uses the time-dependent wave-packet method in an attempt to reproduce the resonances that show in fusion of \textsuperscript{12}C+\textsuperscript{12}C~\protect\citep{diaz-torres2018}.
-%In this method, initial wave-packets are propagated in time using a nuclear Hamiltonian coming from the finite-range liquid-drop model.
-%After some large propagation time observables are calculated using the time-propagated wave functions~\protect\citep{diaz-torres2018}.
-
-Another strategy is to incorporate dynamical polarization effects via fully microscopic time-dependent approaches 
-such as the time-dependent Hartree-Fock (TDHF) mean-field theory~\protect\citep{negele1982,simenel2012,simenel2018}. 
-The main motivations for using TDHF as a tool to study ion-ion fusion is that 
-{\it (i)} it incorporates unrestricted shape evolution of the collision partners induced by coupled-channel effects \protect\citep{simenel2013b}, and
-{\it (ii)} the only parameters of the theory are those of the energy density functional (usually of the Skyrme type~\protect\citep{skyrme1956}, though results using the quark-meson coupling (QMC)~\protect\citep{guichon1988,guichon1996,stone2016} approach are also presented here) 
-describing the effective interaction between the nucleons. 
-Direct applications of TDHF to light systems have been performed at and above the fusion barrier \protect\citep{bonche1978,lebhertz2012,simenel2013a}. 
-A drawback of the approach, however, is that it does not incorporate quantum tunneling of the many-body wave-function 
-and thus cannot be used directly to describe sub-barrier fusion. 
-
-To overcome this limitation, we predict the nucleus-nucleus potential from TDHF calculations, and then compute transmission probabilities through this potential. 
-%In the spirit of including dynamics in the analysis of fusion cross sections, the present work utilizes the well established time-dependent Hartree-Fock (TDHF) formalism and its extensions to study the  \textsuperscript{12}C+\textsuperscript{12}C reaction.
-The dynamic evolution of the nuclei during the collision leads to an energy dependence of the ion-ion potential as the nuclear densities 
-in near-barrier collisions morph much more than in high energy collisions~\protect\citep{washiyama2008,umar2014a,jiang2014}. 
-Using TDHF to predict nucleus-nucleus potentials has important advantages such as a proper treatment of the Pauli exclusion principle \protect\citep{simenel2017} 
-and the inclusion of coupling to transfer channels \protect\citep{godbey2017}.
-Its main limitations, however, are that {\it (i)} the effect of the couplings are only treated in average 
-(while in coupled-channels calculations the incoming channels are summed coherently) and 
-{\it (ii)} the energy dependence of the potential is only accounted for at above barrier energies.
-The second limitation, in particular, is problematic as there is no guarantee that the dynamics of the couplings at the barrier are the same as in deep sub-barrier energies. 
-Nevertheless, predictions of sub-barrier fusion cross-sections based on nucleus-nucleus potentials computed from TDHF trajectories just above the barrier 
-are usually in good agreement with experiments \protect\citep{umar2012a,umar2009b,keser2012,simenel2013a}.
-
-%This energy dependence has been investigated in carbon fusion, as discussed above, however TDHF naturally includes the shape effects arising from near-barrier collisions~\protect\citep{umar2014a,jiang2014} as opposed to a phenomenological approach.
-%It should be mentioned that, in general, transfer is another important process in nuclear collisions and is present in TDHF calculations, though it is a feature that is absent for symmetric systems.
-
-The aim of the present work is to test predictions of  \textsuperscript{12}C+\textsuperscript{12}C fusion cross-sections 
-at deep-sub-barrier energies with potentials derived microscopically from TDHF trajectories at near-barrier energies.
-This is achieved with the density-constrained TDHF (DC-TDHF) method. 
-To consider the separate static and dynamic effects, the density-constrained frozen Hartree-Fock (DCFHF) method has also been used in this study.
-DCFHF, which is a fully microscopic static approach for studying ion-ion potentials, 
-allows for more direct comparisons to other static approaches and offers a baseline for differences when dynamics is considered~\protect\citep{simenel2017}. 
-Our attention is focused on various factors which could impact the theoretical prediction, in order to test the robustness of the predictions. 
-In particular, the effects of numerical approximations, e.g., associated with the grid characteristics, are studied in details. 
-Different energy density functionals are also considered.
-As the predictions are free of adjustable parameters, our goal is to provide the best possible prediction with existing microscopic tools, 
-with the perspective of identifying limitations of the approach and possible future extensions.
-
-The structure of the paper is as follows. A thorough description of both DCFHF and DC-TDHF approaches is presented in Sec.~\ref{sec:form} 
-with a general prescription for calculating transmission probabilities presented first. 
-Section~\ref{sec:res} then presents the results from both methods as they compare to experimental data 
-and recent predictions of the S-factor behavior at low energies of astrophysical interest. 
-Finally a brief summary of the results and a few closing comments are presented in Sec.~\ref{sec:conclusion}.
+Here, we take a first step toward this ambitious theoretical program by investigating the overall effect of isospin dynamics induced mostly by neutron and/or proton transfer in collisions of asymmetric systems~\citep{dasso1985,chomaz1993,baran1996,baran2001,simenel2001,baran2005,simenel2007,baran2009,oberacker2012,umar2008a}.
+In particular, we address the impact of isospin dynamics on fusion barriers and cross-sections using
+the microscopic
+time-dependent Hartree-Fock (TDHF) theory\,\citep{negele1982,simenel2012}
+together with the density-constrained TDHF (DC-TDHF) method for calculating fusion barriers\,\citep{umar2006b}.
+This choice is motivated by the fact that the TDHF approach has been used to successfully describe multinucleon transfer~\citep{simenel2010,simenel2012b,sekizawa2013,scamps2013a,bourgin2016}, as well as strongly damped reactions such as deep-inelastic collisions~\citep{koonin1977,simenel2011} and quasi-fission~\citep{wakhle2014,umar2015a,umar2016}, without relying on an {\it a priori} knowledge of the structure of the reactants.
+Therefore, these microscopic dynamical calculations incorporate the fundamental mechanisms which are relevant for a realistic description of the effect of transfer on fusion, including with exotic beams.
+As a first application, various systems from Ca+Ca to Ca+Sn are considered.
 
 \section{Formalism}
-\label{sec:form}
-In this section we introduce the methods used in computing \textsuperscript{12}C+\textsuperscript{12}C fusion cross sections.
-\subsection{Density-constrained frozen Hartree-Fock}\label{sec:dcfhf}
-Following the idea of Brueckner \textit{et al.}~\protect\citep{brueckner1968}, we derive the bare ion-ion potential from an energy density functional (EDF)  $E[\rho]$
-written as an integral of an energy density $\mH[\rho(\vr)]$, i.e.,
-\begin{equation}
-E[\rho]=\int \d\vr \sdf \mH[\rho(\vr)]~.
-\end{equation}
-The bare potential is obtained by requiring frozen ground-state densities $\rho_{i}$ of each nucleus ($i=1,2$) computed using the Hartree-Fock (HF) mean-field approximation~\protect\citep{hartree1928,fock1930}.
-The Skyrme~\protect\citep{skyrme1956} and quark-meson coupling (QMC)~\protect\citep{stone2016} EDFs are used both to calculate the HF ground state, which are found spherical, and to compute the potential.
-It accounts for the bulk properties of nuclear matter such as its incompressibility which is crucial at short distances~\protect\citep{brueckner1968,misicu2006,hossain2015}.
-Overlaying the densities while neglecting the Pauli exclusion principle between nucleons in different nuclei
-leads to the frozen Hartree-Fock (FHF) potential~\protect\citep{washiyama2008,simenel2008,simenel2012}
-\begin{equation}
-V_{FHF}(R)=\int \d\vr \sdf \mH[\rho_1(\vr)+\rho_2(\vr-R)] - E[\rho_1] -E[\rho_2],
-\label{eq:frozen}
-\end{equation}
-where $R$ is the distance between the centers of the two nuclei.
-The resulting FHF potential can then be used to calculate cross sections and related quantities.
 
-The density-constrained FHF (DCFHF) method is the extension of FHF to exactly account for the Pauli exclusion principle between nucleons~\protect\citep{simenel2017}.
-This inclusion is obtained by using the same frozen densities $\rho_{i}$ from the FHF initialization as a constraint for a new HF minimization.
-This allows the single-particle states to reorganize into a lower energy configuration while maintaining that they are properly antisymmetrized and that the neutron and proton densities remain the same.
-The potential is defined similarly to FHF, though with the density-constrained wave functions~\protect\citep{simenel2017}
-\begin{equation}
-V_{\mathrm{DCFHF}}(R)=\<\Phi_{\mathrm{DC}}(R) | H | \Phi_{\mathrm{DC}}(R) \>-E[\rho_1]-E[\rho_2]\,.
-\label{eq:vr}
-\end{equation}
-The resulting DCFHF potential has the same barrier height as FHF, though the pressure from the Pauli exclusion principle usually forms a pocket inside the fusion barrier.
-DCFHF is the static analog to the density-constrained time-dependent Hartree-Fock (DC-TDHF) approach discussed in Sec.~\ref{sec:dctdhf}, and thus is particularly useful to separate static and dynamic effects~\protect\citep{vophuoc2016}.
-
-\begin{figure}
-	\includegraphics*[width=\textwidth]{../Figures/PotentialsComp.pdf}
-	\caption{Ion-Ion fusion potentials from DC-TDHF, FHF, and DCFHF using the UNEDF1 force.}
-	\label{fig:pots}
-\end{figure}
-\begin{figure}
-	\includegraphics*[width=\textwidth]{../Figures/12C12CColl.pdf}
-	\caption{3D contour plot over projected pseudocolor density plot at distance of the barrier peak at $R=8.06$~fm. Solid red contour surface is drawn for $\rho = 0.08$~fm\textsuperscript{-3} and opaque gray shading is drawn for $\rho = 0.008$~fm\textsuperscript{-3} to show the value and location of interacting densities.}
-	\label{fig:dens}
-\end{figure}
-\begin{figure}
-	\includegraphics*[width=\textwidth]{../Figures/DensityProfile.pdf}
-	\caption{Density profile along the collision axis of the \textsuperscript{12}C + \textsuperscript{12}C system at the barrier peak for densities from the static FHF method and dynamic DC-TDHF method. }
-	\label{fig:denstrace}
-\end{figure}
-\begin{figure*}
-	\includegraphics[width=0.8\textwidth]{../Figures/CrossSections.pdf}
-	\includegraphics[width=0.8\textwidth]{../Figures/CrossSectionsLinear.pdf}
-	\caption{Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion cross sections from DC-TDHF, FHF, and DCFHF using the UNEDF1 force and experimental data from~\protect\citep{aguilera2006,spillane2007,zickefoose2011,barron-palos2006,high1977,jiang2018,mazarakis1973,patterson1969} in (a) logarithmic and (b) linear scales. The hindrance model is from Ref.~\protect\citep{jiang2007}.}
-	\label{fig:xsec}
-\end{figure*}
-
-\subsection{Density-constrained time-dependent Hartree-Fock}
-\label{sec:dctdhf}
-
-
-In the TDHF approximation the many-body wave function is taken as a single
-Slater determinant.
-In this limit, the variation of the time-dependent action with respect to the single-particle states, $\phi^{*}_{\lambda}$, yields the most probable time-dependent path
-in the multi-dimensional space-time phase space represented as a
+In the TDHF approximation the many-body wavefunction is replaced by a single
+Slater determinant and this form is preserved at all times, implying that two-body correlations
+are neglected.
+In this limit, the
+variation of the time-dependent action with respect to the single-particle states, $\phi^{*}_{\lambda}$, yields the most probable time-dependent path
+in the multi-dimensional space-time phase space
+represented as a
 set of coupled, nonlinear, self-consistent initial value equations
 for the single-particle states
 \begin{equation}
@@ -207,183 +92,287 @@ h(\{\phi_{\mu}\}) \ \phi_{\lambda} (r,t) = i \hbar \frac{\partial}{\partial t} \
 where $h$ is the HF single-particle Hamiltonian.
 These are the fully microscopic time-dependent Hartree-Fock equations.
 
-The DC-TDHF approach~\protect\citep{umar2006b} is then employed to calculate the ion-ion potentials $V_{\mathrm{DC{\hbox{-}}TDHF}}(R)$ directly from TDHF dynamics and has been used to calculate fusion cross sections for a wide range of
-reactions~\protect\citep{godbey2017,umar2014a,simenel2013a,umar2012a,umar2006a,oberacker2010,umar2009a,jiang2015a}.
-This approach differs from the DCFHF method in that the nuclear density changes in time following the
-TDHF evolution.
-The main steps of this approach are as follows:
-At certain times $t$ or, equivalently, at certain internuclear distances
-$R(t)$, a static energy minimization is performed with the same constraint mentioned in Sec.~\ref{sec:dcfhf}, i.e. constraining the proton and neutron densities to be equal to the instantaneous TDHF densities
+Almost all TDHF calculations employ the Skyrme EDF, which allows the total energy of the system to be represented
+as an integral of the energy density ${\cal H}(\mathbf{r})$\,\citep{engel1975}
 \begin{equation}
-\delta \< \ H - \sum_{q=p,n}\int d\vr \ \lambda_q(\vr) \ \rho^{TDHF}_q(\vr) \ \> = 0\;.
-\label{eq:var_dens}
+\label{eq:energy}
+E = \int d^3\mathbf{r} {\cal H}(\mathbf{r})\,,
 \end{equation}
-We refer to the minimized energy as the ``density-constrained energy''
+which includes the kinetic,
+isoscalar, isovector, and Coulomb terms \,\citep{dobaczewski1995}:
+\begin{equation}
+\label{eq:edensity}
+{\cal H}(\mathbf{r}) = \frac{\hbar^2}{2m}\tau_0
++ {\cal H}_0(\mathbf{r})
++ {\cal H}_1(\mathbf{r})
++ {\cal H}_C(\mathbf{r})\,.
+\end{equation}
+In particular,
+	\begin{equation}
+	\label{eq:efunctional}
+	{\cal H}_\mathrm{I}(\mathbf{r})
+	= C_\mathrm{I}^{\rho}            \rho_\mathrm{I}^2
+	+  C_\mathrm{I}^{   s}            \mathbf{s}_\mathrm{I}^2
+	+  C_\mathrm{I}^{\Delta\rho}      \rho_\mathrm{I}\Delta\rho_\mathrm{I}
+	+  C_\mathrm{I}^{\Delta s}        \mathbf{s}_\mathrm{I}\cdot\Delta\mathbf{s}_\mathrm{I}
+	+  C_\mathrm{I}^{\tau}      \left(\rho_\mathrm{I}\tau_\mathrm{I}-\mathbf{j}_\mathrm{I}^2  \right)
+	+  C_\mathrm{I}^{   T}      \Big(\mathbf{s}_\mathrm{I}\cdot
+	\mathbf{T}_\mathrm{I} - \tensor{J}_\mathrm{I}^2\Big)
+	+ C_\mathrm{I}^{\nabla J}  \Big(\rho_\mathrm{I}\mathbf{\nabla}\cdot\mathbf{J}_\mathrm{I}
+	+ \mathbf{s}_\mathrm{I}\cdot
+	(\mathbf{\nabla}\times\mathbf{j}_\mathrm{I})\Big)\,,
+	\end{equation}
+
+where we have used the gauge invariant form suitable for time-dependent calculations.
+The isospin index $\mathrm{I}=0,1$ for isoscalar and isovector energy densities, respectively.
+The most common choice of Skyrme EDF restricts the density dependence of the
+coupling constants to the $C_\mathrm{I}^{\rho}$ and $C_\mathrm{I}^s$ terms only.
+These density dependent coefficients contribute to the coupling of isoscalar and isovector fields
+in the Hartree-Fock Hamiltonian.
+The isoscalar (isovector) energy density, ${\cal H}_0(\mathbf{r})$ (${\cal H}_1(\mathbf{r})$), depends on the isoscalar (isovector) particle
+density, $\rho_0 = \rho_n + \rho_p$ ($\rho_1 = \rho_n - \rho_p$), with analogous expressions for other densities and
+currents.
+Values of the coupling
+coefficients as well as their relation to the alternative parametrizations of the Skyrme
+EDF can be found in\,\citep{dobaczewski1995}.
+\begin{figure}
+	\includegraphics*[width=\textwidth]{../Figures/Isospin/V_40_48Ca.pdf}
+	\caption{For the $^{40}$Ca+$^{48}$Ca system;
+		Total and isoscalar DC-TDHF potentials. The shaded region
+		corresponds to the reduction originating from the isovector contribution to the energy
+		density. The insert shows the isoscalar and isovector contributions to the interaction barrier
+		without the Coulomb potential.
+		The TDHF collision energy was $E_\mathrm{c.m.}=55$\,MeV.}
+	\label{fig:CaCa}
+\end{figure}
+
+The above form of the EDF is more suitable for studying the isospin dependence
+of nuclear properties and have been employed in nuclear structure studies\,\citep{dobaczewski1995}.
+In the same spirit we can utilize this approach to study isospin dependent effects in nuclear
+reactions microscopically.
+In particular, the density-constrained time-dependent Hartree-Fock (DC-TDHF) method\,\citep{umar2006b} can be
+employed to study isospin effects on fusion barriers and fusion cross-sections.
+The DC-TDHF approach calculates the nucleus-nucleus potentials $V(R)$ directly
+from  TDHF dynamics and has been used to calculate fusion cross-sections for a wide range of
+reactions\,\citep{umar2014a,simenel2013a,umar2012a,umar2006a,oberacker2010,umar2009a,jiang2015a}.
+The basic idea of this approach is the following:
+At certain times $t$ or, equivalently, at certain internuclear distances
+$R(t)$, a static energy minimization
+is performed while constraining the proton and neutron densities to be equal to the instantaneous
+TDHF densities.
+We refer to the minimized energy as the ``density constrained energy''
 $E_{\mathrm{DC}}(R)$.
-The ion-ion interaction potential $V(R)$ is calculated by
+The ion-ion interaction potential $V(R)$ is obtained by
 subtracting the constant binding energies
-$E_{\mathrm{A_{1}}}$ and $E_{\mathrm{A_{2}}}$ of the two individual nuclei as obtained by the static HF initialization
+$E_{\mathrm{A_{1}}}$ and $E_{\mathrm{A_{2}}}$ of the two individual nuclei
 \begin{equation}
 V(R)=E_{\mathrm{DC}}(R)-E_{\mathrm{A_{1}}}-E_{\mathrm{A_{2}}}\ .
-\label{eq:dctdhfvr}
+\label{eq:vr}
 \end{equation}
-The calculated ion-ion fusion barriers incorporate all of dynamical changes in the nuclear density during the TDHF time evolution in a self-consistent manner.
-As a consequence of this inclusion of dynamical effects the DC-TDHF potential is energy dependent~\protect\citep{umar2014a}.
-At high collision energies, the densities do not have time to rearrange and the results approach the frozen picture.
-The features arising from the dynamic collision distinguish DC-TDHF from the fully static DCFHF approach.
-
-\subsection{Cross sections}\label{sec:cs}
-%[TODO] Consider wording of the resonances discussion
-Both DCFHF and DC-TDHF provide a way to obtain one dimensional ion-ion fusion potentials, which can then be used to calculate fusion cross sections and related quantities.
-%If the resonances can be described by a single Slater determinant, it is possible that they are present in the wave function, though they will not manifest during the time evolution unless they comprise a pure state.
-However, standard implementations of barrier penetration models, i.e., with incoming wave boundary conditions (IWBC) of absorbing imaginary potentials at short distance, cannot account for the sub-barrier resonances observed experimentally~\protect\citep{jiang2013}. 
-Indeed, these boundary conditions are based on the assumption that fusion always occurs when the barrier is overcome, while in reality fusion may not happen if no corresponding states in the compound system are present. 
-This is particularly critical in $^{12}$C+$^{12}$C at $E<7$~MeV due to the low level density of positive parity states in $^{24}$Mg, hindering fusion off-resonance. 
-DC-TDHF predictions should then be compared with experimental cross-sections on-resonance.
-
-Transmission probabilities $T_{l}(E_{\mathrm{c.m.}})$ are acquired by numerical integration of the two-body Schr\"odinger equation:
+The calculated ion-ion interaction barriers contain all of the dynamical changes in the nuclear
+density during the TDHF time-evolution in a self-consistent manner.
+As a consequence of the dynamics the DC-TDHF potential is energy dependent\,\citep{umar2014a}.
+Using the decomposition of the Skyrme EDF into isoscalar and isovector parts [Eq.\,(\ref{eq:efunctional})],
+we can re-write this potential as
 \begin{equation}
-\left[\frac{-\hbar^2}{2\mathrm{M(R)}}\frac{d^2}{dR^2}+\frac{l(l+1)\hbar^2}{2\mathrm{M(R)}R^2} + V(R) - E\right]\psi=0 .
-\label{eq:se}
+V(R) = \sum_{\mathrm{I}=0,1} v_\mathrm{I}(R) + V_C(R)\,,
 \end{equation}
-The IWBC method is used to calculate transmission probabilities which assumes that fusion occurs once the minimum of V(R) is reached~\protect\citep{rawitscher1964}.
-The barrier penetrability $T_l(E_{\mathrm{c.m.}})$ is then the ratio of the incoming flux at the minimum of the potential inside the barrier to the incoming flux at a large distance.
-Once $T_l(E_{\mathrm{c.m.}})$ is calculated, the fusion cross sections at energies above and below the barrier are calculated as 
-\begin{equation}
-\sigma_f(E_{\mathrm{c.m.}})=\frac{\pi}{k_0^2}\sum_{l=0}^{\infty}(2l+1)T_l(E_{\mathrm{c.m.}}).
-\end{equation}
-
-In the case of DCFHF, the mass is a constant and equal to the reduced mass, $\mathrm{M(R)}=\mu$. 
-In the case of DC-TDHF, the coordinate-dependent mass $M(R)$ can
-be calculated directly from TDHF dynamics~\protect\citep{umar2009b}.
-This mass primarily influences the inner part of the barrier, leading to a somewhat broader
-barrier width thus leading to further hindrance in the sub-barrier region.
-Instead of solving the Schr\"odinger equation using the coordinate-dependent mass M(R), the potential can be transformed by a scale factor~\protect\citep{umar2009b,goeke1983}
-\begin{equation}
-d\bar{R}=\left(\frac{\mathrm{M(R)}}{\mu}\right)^{\frac{1}{2}}dR.
-\end{equation}
-Upon making this transformation M(R) is replaced by the reduced mass $\mu$ in Eq.~\ref{eq:se} and the Schr\"odinger equation is solved using the modified Numerov method as it is formulated in the coupled-channel code CCFULL~\protect\citep{hagino1999}.
-%In the current work, a transfer matrix approach has been used to incorporate the coordinate-dependent mass in the calculation of transmission probabilities via a discretization of M(R) and V(R)~\protect\citep{fedirko2010}.
-%This technique allows for an alternate method of obtaining fusion cross sections, while still giving the same results for the M(R)$=\mu$ case.
-
-\subsection{Energy density functional}
-
-Unless otherwise stated, the Skyrme parametrization used was UNEDF1~\protect\citep{kortelainen2012}.
-To investigate the dependence on the choice of the energy density functional we have also performed calculations using the SLy4d functional~\protect\citep{kim1997}. 
-Both parametrizations were fitted without the center of mass correction, making them ideal for dynamic calculations.
-
-These parametrizations do not include the tensor terms of the functional.
-The effects of these terms on heavy-ion fusion have been recently studied~\protect\citep{dai2014a,stevenson2016,guo2018}.
-However, a comparison of the nucleus-nucleus potentials calculated with the SLy5 functional (without tensor)~\protect\citep{chabanat1998a} and with SLy5t (including tensor)~\protect\citep{colo2007}  showed that the effect is quite small for \textsuperscript{12}C + \textsuperscript{12}C~\protect\citep{guo2018b}.
-
-Furthermore, to investigate the behavior of a different density dependence than that of the one used in Skyrme fits, the QMC-I~\protect\citep{stone2016} parametrization of the functional based on the quark-meson coupling model~\protect\citep{guichon1988,guichon1996} was utilized for the first time in a dynamic fusion study.
-
-\subsection{Numerical details}
-
-All calculations were done using the three dimensional VU-TDHF3D code which contains no symmetry restrictions and implements the full energy-density functional including all time-odd terms~\protect\citep{umar2006c}. 
-The numerical box used was 72 fm in length along the collision axis and 24~fm in the other two directions.
-The basis-spline collocation method used to represent derivative operators on the lattice is robust and allows for a coarser grid spacing (typically 1 fm).
-However a finer grid spacing of 0.8~fm was used for the current work to ensure very precise calculations. 
-When comparing barrier heights, however, the change between the coarse and fine grid spacings amounts to a difference of about $\Delta \mathrm{V}_{\mathrm{peak}}=0.5$~keV.
+where $v_\mathrm{I}(R)$ denotes the potential computed by using the isoscalar and isovector parts of
+the Skyrme EDF given in Eq.\,(\ref{eq:edensity}) in Eq.\,(\ref{eq:vr}).
+The Coulomb potential is also calculated via Eq.\,(\ref{eq:vr}) using the Coulomb energy
+density.
+\begin{figure}
+	\includegraphics*[width=\textwidth]{../Figures/Isospin/V_16O_208Pb_ecm75.pdf}
+	\caption{For the $^{16}$O+$^{208}$Pb system;
+		(a) Total and isoscalar DC-TDHF potentials at $E_\mathrm{c.m.}=75$\,MeV. The shaded
+		region corresponds to the reduction originating from the isovector contribution to
+		the energy density.
+		(b) Same as in (a) except for $E_\mathrm{c.m.}=90$\,MeV.
+		(c) Same as in (a) except for $E_\mathrm{c.m.}=120$\,MeV.}
+	\label{fig:OPb}
+\end{figure}
+\begin{figure}
+	\includegraphics*[width=\textwidth]{../Figures/Isospin/V_CaTi_Pb_stack_2.pdf}
+	\caption{Isoscalar and isovector breakdown of the potential barrier for two
+		systems at the same $E_\mathrm{c.m.}/V_B=1.065$;
+		(a) $^{48}$Ca+$^{208}$Pb. The shaded region corresponds to the increase originating
+		from the isovector contribution to
+		the energy density.
+		(b) Same as in (a) except $^{50}$Ti+$^{208}$Pb.
+		The shaded region corresponds to the decrease originating from the isovector contribution to
+		the energy density.}
+	\label{fig:CaTi_Pb}
+\end{figure}
 
 \section{Results}
-\label{sec:res}
 
+We have used the DC-TDHF approach to study fusion barriers for a number of systems.
+Calculations were done in a three-dimensional
+Cartesian geometry with no symmetry assumptions\,\citep{umar2006c} and using the
+Skyrme SLy4 EDF\,\citep{chabanat1998a}.
+The three-dimensional Poisson equation for the Coulomb potential
+is solved by using Fast-Fourier Transform techniques
+and the Slater approximation is used for the Coulomb exchange term.
+The box size used for all the calculations
+was chosen to be $60\times 30\times 30$~fm$^3$, with a mesh spacing of
+$1.0$~fm in all directions. These values provide very accurate
+results due to the employment of sophisticated discretization
+techniques\,\citep{umar1991a}.
 \begin{figure}
-	\includegraphics*[width=0.9\textwidth]{../Figures/SFactors.pdf}
-	\caption{Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion S factors from DC-TDHF, FHF, and DCFHF using the UNEDF1 force, DC-TDHF using the SLy4d force, the hindrance model from~\protect\citep{jiang2007}, and experimental data from~\protect\citep{aguilera2006,spillane2007,zickefoose2011,barron-palos2006,high1977,jiang2018,mazarakis1973,patterson1969}. }
-	\label{fig:sfac}
+	\includegraphics*[width=\textwidth]{../Figures/Isospin/V_Ca_Sn_stack.pdf}
+	\caption{For     (a) $^{40}$Ca+$^{132}$Sn,
+		(b) $^{48}$Ca+$^{132}$Sn
+		%(c) $^{54}$Ca+$^{132}$Sn
+		systems;
+		Total and isoscalar DC-TDHF potentials. In (a) the blue shaded region
+		corresponds to the reduction originating from the isovector contribution.
+		In (b) we see no isovector effect. (c) the isovector effect is reversed
+		causing hindrance as shown by the red shaded region.
+		The inserts show the isoscalar and isovector contributions to the interaction barrier without the Coulomb potential.
+		The TDHF collision energy was $E_\mathrm{c.m.}=120$\,MeV.}
+	\label{fig:CaSn_1}
 \end{figure}
-
-In this section we present ion-ion potentials, fusion cross sections, and astrophysical S factors obtained from the methods outlined in Sec.~\ref{sec:form}.
-
-A light system such as \textsuperscript{12}C + \textsuperscript{12}C does not exhibit a strong energy dependence in the DC-TDHF potential, though in practice collision energies close to the fusion barrier are chosen to allow for maximal rearrangement.
-To this end, the energy chosen for comparison to experiment was $\mathrm{E_{c.m.}}=6.03$~MeV.
-Figure~\ref{fig:pots} shows a comparison of effective ion-ion potentials as calculated using the methods presented in Sec.~\ref{sec:form}.
-All three methods result in an effective potential that follows the point Coulomb potential until the nuclear overlap is enough to form the barrier peak.
-Both FHF and DCFHF potentials form a similar barrier top before diverging in the inner region.
-For DCFHF, a pocket is formed by the pressure resulting from the Pauli exclusion principle~\protect\citep{simenel2017}, whereas FHF decreases rapidly at small distance and has a thinner barrier width overall at sub-barrier energies.
-The potential that is created from the DC-TDHF method shows that dynamic features of the collision causes the effective potential to deviate from the incoming Coulomb potential earlier that both FHF and DCFHF.
-Also, DC-TDHF results in a thinner barrier than FHF and DCFHF, which is expected to enhance sub-barrier cross sections.
-
-In Fig.~\ref{fig:dens}, a 3D contour plot resulting from the DC-TDHF calculation is shown over a pseudocolor density plot corresponding to the position of the barrier peak, $R=8.06$~fm. 
-At this position, the core contours of $\rho = 0.08$~fm\textsuperscript{-3} (solid red contour surface) are well separated at the top of the barrier. 
-The opaque, gray contour is drawn to show the level of the density in the overlapping region, $\rho = 0.008$~fm$^{-3}$.
-The relatively low density at the barrier peak indicates that Pauli repulsion will play a small role for this system at the barrier radius.
-Despite being small, this density overlap produces enough attraction to compensate the Coulomb repulsion, leading to fusion.
-
-A more quantitative representation of the density profile at the barrier is shown in Fig.~\ref{fig:denstrace}.
-Here, the density is plotted along the collision axis. 
-It is interesting to note the higher density in the neck at this separation when dynamics is accounted for (DC-TDHF).
-This change of neck density, induced by the dynamics, is responsible for the lowering of the barrier in DC-TDHF, as seen in Fig.~\ref{fig:pots}.
-Although this change in barrier energy is relatively small, it can significantly influence tunneling probabilities at deep sub-barrier energies. 
-
-The potentials of Fig.~\ref{fig:pots} are used to compute fusion cross sections in Fig.~\ref{fig:xsec}.
-At these scales the difference does not appear to be large, though DC-TDHF seems to slightly over predicts cross sections for this system bellow the barrier.
-However, as discussed in Sec.~\ref{sec:cs}, the comparison should only be made with the maximum of the cross-section on-resonance~\protect\citep{jiang2013}, indicating a better agreement. 
-
-A standard representation of the sub-barrier fusion cross-section is given by the astrophysical S factor 
-\begin{equation}
-S(E)=\sigma(E)Ee^{2\pi \eta},
-\end{equation}
-where $E$ is the center of mass energy, $\eta=Z_1Z_2e^2/\hbar v$ is the Sommerfeld parameter, and $v$ is the relative velocity of the nuclei $v=\sqrt{2E/\mu}$ for a system of reduced mass $\mu$.
-The S factor is often used to analyze fusion reactions of astrophysical interest as, to some extent, it gets rid of the strong energy dependence at sub-barrier energies.
-
-Figure~\ref{fig:sfac} shows a comparison between theoretical and experimental S factors. 
-Both DCFHF and DC-TDHF predict a similar trend for deep sub-barrier energies.
-However neither suggest an extreme hindrance effect such as that seen in the power law extrapolation from Jiang et al.~\protect\citep{jiang2007}.
-The zoom in the low-energy region in Fig.~\ref{fig:sfac}(b) shows that DC-TDHF reproduces well the upper bound of the resonances seen in the data, except for the lowest resonance at 2.14~MeV. 
-Note, however, that this resonance is not observed in all channels and is subject to experimental controversy~\protect\citep{tang2018}.
-Similar agreement with experiment was found in earlier extrapolations such as~\protect\citep{fowler1975,gasques2005}, though it should be reiterated that none of the ion-ion potentials presented in this work were fit to experimental data.
-Note also the role of the Pauli repulsion which can be seen by comparing FHF to DCFHF~\protect\citep{simenel2017}. 
-We see that the additional fusion hindrance at sub-barrier energies due to Pauli repulsion is largely negligible at experimental energies.
-
-As mentioned in the introduction, there is no guarantee that the dynamical effects on the potential extracted from a TDHF calculation at an energy near the barrier are the same as in deep sub-barrier energies. 
-To test the validity of this approximation,  DC-TDHF calculations have been performed at different TDHF energies, as shown in Fig.~\ref{fig:sfaccomp}(a).
-When examining the behavior of the S factors at deep sub-barrier energies, differences in fusion cross sections are greatly magnified.
-Nevertheless, the difference between the DC-TDHF predictions remains small, indicating that the results are only slightly affected by the energy dependence of the potential. 
-The bulk of this effect arises from the increasing and sharpening peaks of the coordinate dependent mass $M(R)$ at the location of the barrier at lower energies, though as mentioned before, density rearrangement also plays a role. 
-
-Finally, let us investigate the sensitivity to the energy density functional. 
-As such, we have plotted the comparison using the resultant S factors in part (b) of Figure~\ref{fig:sfaccomp} which shows the astrophysical S factor for three different functionals: the SLy4d \protect\citep{kim1997} and UNEDF1 \protect\citep{kortelainen2012} Skyrme functionals and the QMC-I functional which has a different density dependence than the Skyrme one. 
-The main conclusion is that the trends are very similar for these three functionals. In particular, none of them predict a maximum in the S factor. 
-Quantitatively, the QMC results are lower throughout the sub-barrier energy region.
-Nevertheless, the variations in the experimental data does not allow for the unambiguous identification of what functional best reproduces experimental results.
-
+%\onecolumngrid
 \begin{figure}
-	\includegraphics*[width=\textwidth]{../Figures/SFactorsComp.pdf}
-	\caption{(Color online) Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion S factors from DC-TDHF at (a) differing TDHF energies and (b) using different functionals.}
-	\label{fig:sfaccomp}
+	\centering
+	\includegraphics*[width=\textwidth]{../Figures/Isospin/current.pdf}
+	\caption{Neutron and proton current vectors in $^{40,48}$Ca+$^{132}$Sn at $E_\mathrm{c.m.}=120$\,MeV and at
+		a separation  $R=11.5$\,fm between the fragments.}
+	\label{fig:current}
 \end{figure}
+%\twocolumngrid
 
+In Fig.\,\ref{fig:CaCa} we show the total and isoscalar fusion barriers (both including the Coulomb contribution)
+for the $^{40}$Ca+$^{48}$Ca system at $E_\mathrm{c.m.}=55$~MeV.
+For the Ca+Ca systems the energy dependence is relatively
+weak\,\citep{keser2012,umar2014a,washiyama2008}.
+The reduction of the isoscalar barrier is due to the isovector contribution. It is evident that
+the isovector dynamics results in the narrowing of the fusion barrier, thus resulting in an enhancement of the sub-barrier
+fusion cross-sections. The insert in Fig.\,\ref{fig:CaCa} shows the isovector and isoscalar components without the Coulomb contribution.
+We have also calculated fusion barriers for the $^{40}$Ca+$^{40}$Ca and $^{48}$Ca+$^{48}$Ca systems, where the isovector contribution is
+zero as expected from symmetry.
+Irrespective of its isovector/isoscalar nature, the DC-TDHF potential is a way to represent the potential felt by the system at a given time. The relation between time and distance between the fragments then allow to represent the potential in the traditional manner, i.e., as a function of the internuclear distance. The fact that the isovector reduction occurs essentially inside the barrier indicates that the proton and neutron flows become larger for stronger overlap occurring in the later stage of fusion.
+
+As an example of a more asymmetric system we performed calculations for the $^{16}$O+$^{208}$Pb system
+at $E_{\mathrm{c.m.}}=75$\,MeV. Results are shown in Fig.\,\ref{fig:OPb}(a). Here we see a
+substantial enhancement of sub-barrier fusion due to the isovector dynamics.
+For this system we have performed further
+calculations at c.m. energies of 90\,MeV and 120\,MeV shown in Fig.\,\ref{fig:OPb}(b-c).
+As the beam energy  increases, the
+relative contribution from the isovector component to the total barrier decreases, while the overall barrier height increases with
+increasing energy. At TDHF energies much higher than the barrier height the total barriers approaches the frozen density
+barrier\,\citep{washiyama2008,umar2014a}
+due to the inability of the system to rearrange at that time-scale at which time the isovector contribution vanishes as well.
+Next, we have calculated isoscalar and isovector breakdown of the potential barrier for two
+systems at the same $E_\mathrm{c.m.}/V_B=1.065$ as shown in Fig.\,\ref{fig:CaTi_Pb}(a,b) for;
+$^{48}$Ca+$^{208}$Pb system where the shaded region corresponds to the increase in the barrier
+originating
+from the isovector contribution to the energy density, and for the
+$^{50}$Ti+$^{208}$Pb system where
+the shaded region corresponds to the decrease in the barrier originating from the isovector
+contribution to
+the energy density.
+The above results demonstrate the influence of isovector dynamics on typical fusion barriers.
+
+We next look at Ca$+$Sn reactions.
+The experimental observation of a sub-barrier fusion enhancement in the system $^{40}$Ca+$^{132}$Sn
+as compared to more neutron-rich system $^{48}$Ca+$^{132}$Sn was the subject of a previous DC-TDHF study\,\citep{oberacker2013},
+where it was shown that the fusion barriers for the two systems have essentially the same height but the fusion barrier for
+the $^{48}$Ca+$^{132}$Sn system was much wider than that for the $^{40}$Ca+$^{132}$Sn system.
+We see in Fig.\,\ref{fig:CaSn_1}(a) a strong reduction of the isoscalar barrier due to the isovector contribution. This behavior is similar to that of the previous
+two systems albeit the isovector reduction is somewhat larger as shown in the insert of
+Fig.\,\ref{fig:CaSn_1}(a).
+We then performed the same calculation for the $^{48}$Ca+$^{132}$Sn system as shown in Fig.\,\ref{fig:CaSn_1}(b).
+The startling result is the vanishing of the isovector contribution. With no isovector reduction the fusion barrier for this
+system is much wider than that for the $^{40}$Ca+$^{132}$Sn system for which substantial reduction occurs.
+The absence of the isovector component for the $^{48}$Ca+$^{132}$Sn system could be a reflection of the negative $Q-$values
+for neutron pickup. This is the first direct observation of this phenomena in microscopic calculations.
+
+This may also explain why for the $^{48}$Ca+$^{132}$Sn system simply considering the $2^+$ and
+$3^-$ excitations of the target and projectile in coupled-channel calculations is able to
+reproduce the sub-barrier fusion cross-sections, whereas doing the same for the $^{40}$Ca+$^{132}$Sn system grossly under-predicts the cross-sections.
+In Ref.\,\citep{kolata2012}, this was attributed to transfer
+%the presence of significant transfer,
+which manifests itself in the isovector dynamics.
+In Fig.\,\ref{fig:CaSn_1}(c) we have also calculated the potential barriers for the theoretical
+$^{54}$Ca+$^{132}$Sn reaction. Here, we see that the influence of the isovector component
+is reversed, as indicated by the shaded region. This reversal leads to the widening of
+the potential barrier, further hindering sub-barrier fusion.
+
+In all the studied systems, we observe an isovector reduction in the presence of  positive $Q-$values for transfer channels.
+This can be understood from the $C_\mathrm{I}^{\rho}            \rho_\mathrm{I}^2$ term in Eq.~(\ref{eq:edensity})
+which quantitatively dominates.
+When an isospin equilibration occurs (driven by positive $Q-$values),
+the $I=1$ contribution gets reduced as $(\rho_p-\rho_n)^2$ decreases
+in each fragment and $C_1^\rho$ is positive.
+This also explains why, in systems with only negative Q-values, the isovector contribution to the potential
+vanishes.
+In very few cases, such as for the theoretical $^{54}$Ca+$^{132}$Sn reaction,
+we even found an increase of the
+potential which is attributed to more complex density dependencies of $H_1$ in Eq.~(\ref{eq:edensity}).
+
+In order to investigate the role of transfer in more detail we have plotted  in Fig.\,\ref{fig:current}
+the microscopic TDHF neutron and proton currents for $^{40,48}$Ca$+^{132}$Sn
+at  $E_\mathrm{c.m.}=120$\,MeV and  at the nuclear separation $R=11.5$\,fm,
+which is slightly inside the barrier but still corresponds to an early stage of the reaction.
+%for the same collision energy used to calculate the barriers shown in Fig.\,\ref{fig:CaSn_1}
+In $^{40}$Ca+$^{132}$Sn, neutrons flow from Sn to Ca (Fig.~\ref{fig:current}a) and protons from Ca to Sn (Fig.~\ref{fig:current}c),
+compatible with the fact that there are many positive $Q-$value channels for these transfers to occur.
+For $^{48}$Ca$+^{132}$Sn, which has no positive $Q-$value transfer channel,
+we observe a convergence of neutrons towards the neck (Fig.~\ref{fig:current}b),
+which is what we would expect in the fusion process.
+This is also what is observed for protons in (Fig.~\ref{fig:current}d),
+although there is a larger displacement of protons from Ca towards the
+neutron-rich neck. %Nevertheless, this does not correspond to a transfer
+%of protons as the proton flow in the tin is also directed towards the neck,
+%which is compatible with the fact that there is no positive $Q-$value for
+%proton transfer in this system.
+%Examination of these currents shows that for
+%the $^{40}$Ca+$^{132}$Sn system neutrons flow from $^{132}$Sn to
+%$^{40}$Ca, whereas the proton flow is from $^{40}$Ca to $^{132}$Sn.
+%Proton flow for the $^{48}$Ca+$^{132}$Sn system is similar, namely from $^{48}$Ca to
+%$^{132}$Sn. However, we observe an interesting difference for the neutron flow in the
+%$^{48}$Ca+$^{132}$Sn system, namely a bi-directional flow between the two systems.
+%The dynamics of this bi-directional flow results in
+As a result, the isovector current density in the neck region is an order of magnitude lower
+for the $^{48}$Ca+$^{132}$Sn system in comparison to the $^{40}$Ca+$^{132}$Sn.
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{../Figures/Isospin/x_40Ca_132Sn.pdf}
+	\caption{Fusion cross-section  in $^{40}$Ca+$^{132}$Sn calculated with (black line) and without (red line) isovector reduction, using the potentials of Fig.~\ref{fig:CaSn_1}a.}
+	\label{fig:cs}
+\end{figure}
+This is the primary cause for the disappearance of the isovector contribution to the barrier.
+%In the neck region, the relative magnitude of the proton current density of $^{48}$Ca+$^{132}$Sn system
+%is 30\%-50\% smaller than the proton current density of the $^{40}$Ca+$^{132}$Sn.
+%This behavior is prevalent during the entire neck dynamics.
+%Examination of the currents for the $^{54}$Ca+$^{132}$Sn reaction reveals that there is
+%essentially no through-flow of neutrons or protons during the neck formation.
+
+Finally, the impact of the isovector contribution to the fusion dynamics is shown in Fig.~\ref{fig:cs},
+where fusion cross-sections have been computed from the DC-TDHF potentials of Fig.~\ref{fig:CaSn_1}a.
+The effect of the isovector reduction is particularly visible at sub-barrier energies where an enhancement
+of the fusion cross-sections by about an order of magnitude is observed.
+To our knowledge, this is the first microscopic evidence of the enhancement
+of fusion due to coupling to transfer channels.
 
 \section{Conclusion}
-\label{sec:conclusion}
-A precise study of \textsuperscript{12}C+\textsuperscript{12}C fusion has been performed using multiple parameter-free, microscopic approaches. 
-Various energy density functionals were also explored, including the first application to heavy-ion fusion with an energy-density functional based on the quark-meson coupling model.
-A comparison between FHF and DCFHF approaches shows that Pauli repulsion only plays a minor role in this system, and is not sufficient to induce a maximum in the astrophysical S factor. 
-Dynamical effects described in the DC-TDHF approach exhibit the same trend as static calculations, with slightly higher sub-barrier fusion cross-sections due to a narrowing of the potential barrier. 
-DC-TDHF predictions are in good agreement with the maximum fusion cross-sections on-resonances. 
-The different functionals all lead to the same trends in the astrophysical S factor, with slightly smaller values for the QMC-I functional. 
 
-Future studies of other light nuclei should be performed using both DCFHF and DC-TDHF as the effect of dynamic processes may play a larger role in other reactions, e.g. transfer effects in asymmetric systems such as \textsuperscript{13}C+\textsuperscript{12}C. 
-The separation of static and dynamic effects is an interesting endeavor in itself which may hint at what drives (and hinders) fusion in both light and heavy nuclei.
+In summary, we have developed a microscopic approach to study the effect of isospin dynamics on fusion barriers.
+We have shown that for most systems isovector dynamics results in the thinning of the barrier thus enhancing
+the sub-barrier fusion cross-sections. The isovector reduction effect vanishes for symmetric systems as well
+as the $^{48}$Ca+$^{132}$Sn system for which neutron pickup $Q-$values are all negative.
+These results provide a quantitative measure for the importance of transfer for
+sub-barrier fusion reactions.
+Furthermore, they elucidate the non-trivial dependence of sub-barrier fusion for neutron-rich
+systems and illustrate the importance of dynamical microscopic models that incorporate the nuclear
+structure and reactions on the same footing.
+%A more detailed study including cross-section ratios and other systems will be the subject of a future study.
 
-Finally, to address the limitations inherent in the methods pursued here and to further understand the fusion process for systems like \textsuperscript{12}C+\textsuperscript{12}C, additional techniques for studying sub-barrier fusion should be explored.
-One such improvement would be to pursue a fully microscopic description of many-body tunneling, e.g., following Refs.~\protect\citep{levit1980c,reinhardt1980}, 
-to avoid the reduction of the problem to the two-body case as done here.
-Such a method would be of great use beyond light systems or fusion alone, opening the door for a fully microscopic mean field description of fission and fusion.
-
-
-
-\section*{Acknowledgments}
-We thank S. Courtin for useful discussions and for clarifying experimental questions. 
-This work has been supported by the
-Australian Research Council Grants No. DP180100497 and DP190100256,
-and by the U.S. Department of Energy under grant No.
-DE-SC0013847 with Vanderbilt University.
-Part of this research was undertaken with the assistance of resources
-from the National Computational Infrastructure (NCI), which is supported by the Australian Government.
+We thank K. Vo-Phuoc for useful discussions regarding the Ca+Sn systems.
+This work has been supported by the U.S. Department of Energy under grant No.
+DE-SC0013847 with Vanderbilt University and by the
+Australian Research Council Grant No. FT120100760.
 
 \clearpage
 
