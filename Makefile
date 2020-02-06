@@ -11,7 +11,7 @@ LATEX     = xelatex
 BASH      = bash -c
 ECHO      = echo
 RM        = rm
-TMP_SUFFS = aux bbl blg log dvi ps eps out fdb_latexmk fls lof lot nlo toc
+TMP_SUFFS = aux bbl blg log dvi ps eps out fdb_latexmk fls lof lot nlo toc xdv
 RM_TMP    = ${RM} $(foreach suff, ${TMP_SUFFS}, *.${suff})
 
 #################################################################################
