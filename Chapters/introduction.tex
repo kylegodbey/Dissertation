@@ -17,17 +17,31 @@ That is to say that studying the fusion, transfer, equilibration, vibrations, et
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{../Figures/intro_figs/ReidForce2.jpg}
-	\caption{\citep{reid1968} Figure from~\citep{bdushaw}.}
+	\caption{An example nucleon-nucleon potential from the Reid model~\citep{reid1968} of the nuclear force. Note the characteristic exponential decay in the attractive tail, as well as the hard-core repulsion that tends toward infinity at $R\approx0.7$. Figure from~\citep{bdushaw}.}
+	\label{fig:reid}
 \end{figure}
 
 The specific subbranch of nuclear physics this thesis focuses on is the realm of low-energy nuclear physics.
 At this level, relativistic effects are typically neglected and the nuclei are modeled as collections of protons and neutrons interacting with each other to form a bound system.
-The force felt by the nucleons themselves is an artifact of the strong interaction, mediated primarily by the exchange of virtual pions with an effective range of about~$1$~(fm).
+The force felt by the nucleons themselves is an artifact of the strong interaction, mediated primarily by the exchange of virtual pions with an effective range of about~$1$~fm.
 Through further contributions by vector mesons (principally rho and omega), a complicated model of interacting nucleons can be built that depends on not only a nucleon's charge and distance, but also on its spin and angular momentum as well.
-Extensive effort has been placed in modeling nuclei using such an interaction (see ~\citep{wiringa1995} and~\citep{reid1968} for popular choices of a N-N potential), though this \textit{ab initio} approach is not numerically feasible for large nuclei or for dynamical interactions between nuclei.
+An example channel of the Reid potential~\citep{reid1968}  is shown in Fig.~\ref{fig:reid}.
+Extensive effort has been placed in modeling nuclei using such an interaction (see ~\citep{wiringa1995} for another popular choice of an N-N potential), though this \textit{ab initio} approach is not numerically feasible for large nuclei or for dynamical interactions between nuclei.
 It is for this reason that alternate approaches to modeling finite nuclei have been pursued throughout the field's history.
 
-One such approach is that of the mean-field method \citep{hartree1928,fock1930,dirac1930,kohn1965}
+One such approach is that of the mean-field method which, simply stated, assumes that each nucleon moves freely through an average field made up of contributions from all the other nucleons.
+This independent particle approximation is extremely powerful because it reduces a series of N-body self interactions to a simple sum over each individual particle in the mean-field.
+A schematic image is shown in Fig.~\ref{fig:meanfield}.
+While many takes on the mean-field idea have been pursued over time, the foundation of the current work was formulated in 1928 when Hartree developed the self-consistent field method~\citep{hartree1928}.
+This was further extended for antisymmetric systems by Fock to form the more complete Hartree-Fock method that has been used since~\citep{fock1930}.
+Despite having a general purpose algorithm for self-consistently solving the static many-body quantum problem, the method wasn't widely adopted until computational abilities were more available.
+
+HF EQNS
+
+With the desire to study the dynamics, an extension of the base Hartree-Fock method to a time-dependent form is desirable.
+This was first written by Dirac in 1930
+
+\citep{dirac1930,kohn1965}
 
 The specific mean-field approaches to each project presented in this work are discussed in their respective chapters, though a general, brief word should be said about the mean-field method as it applies to atomic nuclei.
 As the nucleus is traditionally thought of as a densely packed collection of nucleons, the primary assumption that individual protons and neutrons can travel freely in the nucleus is a bit counter intuitive.
