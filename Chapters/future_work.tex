@@ -5,13 +5,34 @@
 
 %%
 %% Final conclusion of the dissertation
-\section{Conclusion}
+\chapter{Conclusion}
 \label{sec:future_work_conclusion}
-The uniting tool behind the work presented in this thesis has been the use of TDDFT to explore nuclear reactions at the mean-field level.
-From quasielastic scattering to the total fusion of nuclear fragments, TDDFT alone can readily describe the outcome of nuclear collisions.
+The uniting tool behind the work presented in this thesis has been the use of TDHF to explore nuclear reactions at the mean-field level.
+From quasielastic scattering to the total fusion of nuclear fragments, TDHF alone can readily describe the outcome of nuclear collisions.
 As mentioned before, at the base level, TDHF is optimized for the description of one-body observables~\citep{balian1981}.
 This predictive ability is furthered by the development and use of extensions to the base theory to uncover correlations and effects beyond the mean-field.
-It is through this effort that nuclear DFT has become the dominant tool in recent years to study nuclear reactions at low energies -- energy scales that are of interest to superheavy and neutron rich element formation, seed reactions of the r-process, and even the general description of equilibration in interacting quantum many-body systems.
+It is through this effort that nuclear density functional theory has become the dominant tool in recent years to study nuclear reactions at low energies -- energy scales that are of interest to superheavy and neutron rich element formation, seed reactions of the r-process, and even the general description of equilibration in interacting quantum many-body systems.
+
+To briefly summarize, each chapter either has focused on a specific aspect of nuclear reactions or attempts to exhaustively characterize a given system.
+In Chapter~\ref{chapters:chapter_2}, I have discussed the development of a new technique to explain the impact of nucleon transfer on the fusion of heavy ions.
+Through this method, we have managed to elegantly link experimental results to the fundamental process of nucleon transfer and succinctly explain the anomalous results seen in the data.
+As the method developed depends only on the nuclear EDF, it may continue to be used for any future study of fusion for any reactions of interest.
+Chapter~\ref{chapters:chapter_3} has also explored fusion reactions, though at a more fundamental level.
+Beyond the implications of the role of the Pauli principle in heavy ion collisions, the development and implementation of the DCFHF method has provided yet another tool to apply future studies of fusion.
+The DCFHF prescription is also completely general and may be used as an input for those studying fusion using theories other than our own.
+
+Less focused on theoretical development are the projects presented in Chapters~\ref{chapters:chapter_4} and~\ref{chapters:chapter_5} which investigated the effect of the Skyrme tensor interaction on fusion probabilities for a large range of nuclei.
+This sort of study is interesting, as the EDF is the only external input into a TDHF calculation, the fitting of which representing the only connection to experimental data at all.
+In a similar vein is Chapter~\ref{chapters:chapter_6} which has studied the fusion probabilities of \textsuperscript{12}C+\textsuperscript{12}C at energies of astrophysical interest.
+This provides vital information regarding reaction rates of carbon burning in stars, thus informing nucleosynthesis pathways in general. 
+
+The last two chapters diverge from the narrow focus on fusion by systematically investigating transfer via two vastly different techniques.
+Chapter~\ref{chapters:chapter_7} has approached the problem by using direct TDHF collisions to study what drives fragment production in $^{48}$Ca+$^{249}$Bk reactions.
+Through the use of a large number of calculations for multiple orientations, a trend emerged pinning the primary cause of system separation on deformed shell effects in the light outgoing fragments.
+This is significant, as similar results have been seen in studies of fission~\citep{scamps2018}, implying a deeper connection between the two processes.
+Finally, Chapter~\ref{chapters:chapter_8} goes beyond TDHF to study transfer in symmetric collisions of $^{176}$Yb for multiple orientations and energies.
+By peering at the distribution of particles transferred, the likelihood of fragment production can be mapped to see that the system may very well prove to be an excellent probe of the neutron rich region of the nuclear chart.
+Such multinucleon transfer reactions are becoming more and more available thanks to build ups in experimental ability, and give the opportunity to look further into the properties neutron rich and superheavy nuclei.
 
 The sum total of this work and all others in this area serves as the foundation for the next step in studying the nuclear many-body problem as it relates to reactions and structure studies.
 Through further development of extensions to the base theory and as of yet unimagined approaches to better handle many-body correlations, the future of low-energy physics relies on improving our collective understanding of how systems of many particles interact with each other.

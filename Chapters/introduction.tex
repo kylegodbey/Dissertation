@@ -13,7 +13,7 @@ Leaving aside the fact that nuclei are made of protons and neutrons, the dynamic
 This is due to the striking fact that most quantum many-body systems (no matter the specific systems and particles that compose their structure) exhibit the same general features as atomic nuclei.
 That is to say that studying the fusion, transfer, equilibration, vibrations, etc. of nuclear systems can provide vital insight into analogous studies in interactions between cold atoms or molecules -- systems which are several orders of magnitude larger than the few femtometers (fm) of interest to nuclear physicists.
 
-\section{The Nuclear Many-Body Problem (in a nutshell)}
+\section*{The Nuclear Many-Body Problem (in a nutshell)}
 
 \begin{figure}[t]
 	\includegraphics[width=\textwidth]{../Figures/intro_figs/ReidForce2.jpg}
@@ -42,6 +42,7 @@ Despite having a general purpose algorithm for self-consistently solving the sta
 
 While the Hartree-Fock method provides a general purpose, robust numerical algorithm, it is only useful for studying static properties of nuclei.
 To obtain a time-dependent theory based on the mean-field approximation, one may proceed in several ways\footnote{For a more complete description of the various approaches to deriving TDHF (including a path integral formulation, many-body perturbation theory, the Balian-V\'en\'eroni variational principle, etc) see~\citep{simenel2018}.} though we will focus on the derivation by minimization of the Dirac action.
+As it's vital to all chapters of this thesis and reveals much about the approximations and limitations of the theory, I will cover the derivation in detail.
 First, consider the Dirac action from $t_0$ to $t_1$,
 \begin{equation}
 S\equiv S_{t_0,t_1}[\Psi] = \int_{t_0}^{t_1}dt \langle \Psi(t) | \left(i\hbar\frac{d}{dt}-\hat{H}\right)|\Psi(t)\rangle.
@@ -92,26 +93,58 @@ Even at finite collision energies, the mean free path of nucleons in the nucleus
 This means that the average potential felt by the nucleons in the nucleus will be around the minimum of a model potential like the one shown in Fig.~\ref{fig:reid}.
 Should one go to higher collision energies, the mean-field approximation begins to break down and may misrepresent the outcome of such reactions.
 
-\section{Nuclear Dynamics}
+\section*{Nuclear Dynamics}
 
-static systems rare in nature, firm understanding of dynamics and reactions
+\begin{figure}[t]
+	\includegraphics[width=\textwidth]{../Figures/intro_figs/timescale.png}
+	\caption{The general timescales of nuclear reactions from quasielastic scattering through fusion and subsequent decay.}
+	\label{fig:timescale}
+\end{figure}
 
-Broad picture of dynamics of nuclear systems
-focus on reactions and collisions between two nuclei
-Studies can be broadly separated into time scales of reactions
-though in practice, experimental studies include events from all
+Our focus is now turned to the dynamics of nuclear physics at low collision energies as predicted by TDHF.
+Broadly speaking, for two incoming nuclei with their own distinct numbers of protons and neutrons, one could expect to see a large number of possible outcomes depending on factors such as the orientation of the incoming nuclei, the distance off the collision axis, and the energy between the two fragments.
+What is seen experimentally will be some complex combination of initial configurations, however.
+The typical technique employed to investigate a given system is then to perform a large number of calculations across the configuration space in an attempt to understand what is happening systematically as you change any initial quantity.
+It is for this reason that one must take care to check the full parameter space in order to make authoritative statements on the physics at play in reactions, especially when comparing to experimental data.
 
-sec1 time scales
-sec2 methods to study reactions
+The usual method of classifying nuclear reactions is by the length of time that the fragments stay in contact\footnote{The specific definition of contact varies from work to work, though it is typically stated as when the density in the neck region between the nuclei is around half the saturation density, $\rho=0.08$.} before coming apart again.
+Of course, if the fragments stay together indefinitely this is interpreted as a fusion event in TDHF.
+Though the timescales and definition of reaction channels are fluid, they may be roughly divided into categories as is shown in Fig.~\ref{fig:timescale}.
+For reasons mentioned in the previous section TDHF is capable of investigating reaction mechanisms from the far left of the chart up through compound nucleus formation (around $10^{-20}-10^{-19}$s in Fig.~\ref{fig:timescale}).
+Any subsequent events after a fused system is formed, like fission or the evaporation of a particle, will not occur in a TDHF calculation and must be dealt with using a separate technique.
+
+\begin{figure}[t]
+	\includegraphics[width=\textwidth]{../Figures/intro_figs/48Ca249BkEvolution_tr.png}
+	\caption{A typical density evolution for a quasifission reaction. The system presented is $^{48}$Ca$+^{249}$Bk and the figure is taken from~\citep{godbey2020}.}
+	\label{fig:qf}
+\end{figure}
+
+As an example case, a typical set of contours from a benchmark quasifission reaction may be seen in Fig.~\ref{fig:qf}.
+In this reaction, as is common in quasifission, the initially mass asymmetric system collides and begins to exchange a substantial amount of energy and mass before rotating and forming two new nuclei as they separate.
+As mentioned before, the nuclei produced in such a reaction will depend on the initial configuration, and substantial effort has been expended to understand the production rates of nuclei via these sorts of reactions.
+From the image it is clear that the dynamics governing the outcome of a nuclear collisions depend on much more than the incoming number of particles, hence the sophisticated tools and techniques used to study these processes.
+
+\section*{Summary}
+
+Through use of state-of-the-art many-body methods this thesis explores nuclear reactions through both theoretical development and extensions of the base theories, as well as through systematic, comprehensive studies of nuclei.
+Each chapter either focuses on a specific aspect of nuclear reactions or attempts to exhaustively characterize a given system.
+In Chapter~\ref{chapters:chapter_2}, I discuss the development of a new extension to explore the role of transfer in the initial stages of the collision on fusion.
+The basis of the technique is described and then select applications are presented to demonstrate the applicability to generic nuclear systems.
+Chapter~\ref{chapters:chapter_3} meanwhile continues to focus on fusion, though via a more basic aspect.
+Specifically, a method is developed to directly show the impact of the Pauli exclusion principle on heavy ion collisions at low energies.
 
 
+Chapters~\ref{chapters:chapter_4} and~\ref{chapters:chapter_5} turn away from the development of new extensions to TDHF and instead look into the effect of the Skyrme tensor interaction on fusion for multiple systems.
+Similar to this is Chapter~\ref{chapters:chapter_6} which studies fusion cross sections of \textsuperscript{12}C+\textsuperscript{12}C both above and below the fusion barrier.
+This study also represents an effort to make extremely precise fusion calculations be checking the effect of numerical changes on the results.
+
+Finally, the last two chapters are largely devoted to transfer studies for two systems of nuclei.
+Chapter~\ref{chapters:chapter_7} utilizes direct TDHF collisions to study fragment production in $^{48}$Ca+$^{249}$Bk reactions.
+Due to the deformed nature of $^{249}$Bk, a complete sweep of angles was performed to paint the fullest picture yet of quasifission in TDHF.
+While also a study of transfer, Chapter~\ref{chapters:chapter_8} goes beyond TDHF to look at fluctuations about the mean field to uncover the correlations that are missing in the base theory.
+This system, as did the one before, requires a large amount of computation due to the deformed initial states and the added cost of the beyond TDHF method.
 
 
-%% Section
-\section{Section 1}\label{sec:ch_1_sec_1}
-
-%% Subsection
-\subsection{Subsection 1}\label{subsec:subsec_1.1.1}
 
 
 \clearpage
