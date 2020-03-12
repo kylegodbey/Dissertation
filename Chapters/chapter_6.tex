@@ -20,24 +20,23 @@
 %\homepage[]{Your web page}
 %\thanks{}
 %\altaffiliation{}
-\affil[2]{Department of Theoretical Physics and Department of Nuclear Physics, Research School of Physics and Engineering, The Australian National University,
-	Canberra ACT 2601, Australia}
+\affil[2]{Department of Theoretical Physics and Department of Nuclear Physics, Research School of Physics and Engineering, The Australian National University, Canberra ACT 2601, Australia}
 
 \author[1]{A. S. Umar}
 
 {
-	\bfseries\centering
-	The following work has been accepted by Physical Review C~\citep{godbey2019b} and is reprinted below in its entirety.\\
-	\textcopyright2019 American Physical Society
+
 	\makeatletter
-	\begin{center}\large\bfseries
-		\@title
-		\par\end{center}
+
 	\begin{center}
 		\AB@authlist
 		\AB@affillist
 	\end{center}
 	\makeatother
+	
+		\bfseries\centering
+	The following work has been accepted by Physical Review C~\citep{godbey2019b} and is reprinted below in its entirety.\\
+	\textcopyright2019 American Physical Society\\
 }
 \makeatletter
 \renewcommand{\AB@affillist}{}
@@ -187,27 +186,8 @@ V_{\mathrm{DCFHF}}(R)=\<\Phi_{\mathrm{DC}}(R) | H | \Phi_{\mathrm{DC}}(R) \>-E[\
 The resulting DCFHF potential has the same barrier height as FHF, though the pressure from the Pauli exclusion principle usually forms a pocket inside the fusion barrier.
 DCFHF is the static analog to the density-constrained time-dependent Hartree-Fock (DC-TDHF) approach discussed in Sec.~\ref{sec:dctdhf}, and thus is particularly useful to separate static and dynamic effects~\protect\citep{vophuoc2016}.
 
-\begin{figure}
-	\includegraphics*[width=\textwidth]{../Figures/CC/PotentialsComp.pdf}
-	\caption{Ion-Ion fusion potentials from DC-TDHF, FHF, and DCFHF using the UNEDF1 force.}
-	\label{fig:pots}
-\end{figure}
-\begin{figure}
-	\includegraphics*[width=\textwidth]{../Figures/CC/12C12CColl.pdf}
-	\caption{3D contour plot over projected pseudocolor density plot at distance of the barrier peak at $R=8.06$~fm. Solid red contour surface is drawn for $\rho = 0.08$~fm\textsuperscript{-3} and opaque gray shading is drawn for $\rho = 0.008$~fm\textsuperscript{-3} to show the value and location of interacting densities.}
-	\label{fig:dens}
-\end{figure}
-\begin{figure}
-	\includegraphics*[width=\textwidth]{../Figures/CC/DensityProfile.pdf}
-	\caption{Density profile along the collision axis of the \textsuperscript{12}C + \textsuperscript{12}C system at the barrier peak for densities from the static FHF method and dynamic DC-TDHF method. }
-	\label{fig:denstrace}
-\end{figure}
-\begin{figure*}
-	\includegraphics[width=0.8\textwidth]{../Figures/CC/CrossSections.pdf}
-	\includegraphics[width=0.8\textwidth]{../Figures/CC/CrossSectionsLinear.pdf}
-	\caption{Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion cross sections from DC-TDHF, FHF, and DCFHF using the UNEDF1 force and experimental data from~\protect\citep{aguilera2006,spillane2007,zickefoose2011,barron-palos2006,high1977,jiang2018,mazarakis1973,patterson1969} in (a) logarithmic and (b) linear scales. The hindrance model is from Ref.~\protect\citep{jiang2007}.}
-	\label{fig:xsec}
-\end{figure*}
+
+
 
 \subsection{Density-constrained time-dependent Hartree-Fock}
 \label{sec:dctdhf}
@@ -308,13 +288,15 @@ When comparing barrier heights, however, the change between the coarse and fine 
 \section{Results}
 \label{cc:sec:res}
 
-\begin{figure}
-	\includegraphics*[width=0.9\textwidth]{../Figures/CC/SFactors.pdf}
-	\caption{Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion S factors from DC-TDHF, FHF, and DCFHF using the UNEDF1 force, DC-TDHF using the SLy4d force, the hindrance model from~\protect\citep{jiang2007}, and experimental data from~\protect\citep{aguilera2006,spillane2007,zickefoose2011,barron-palos2006,high1977,jiang2018,mazarakis1973,patterson1969}. }
-	\label{fig:sfac}
-\end{figure}
+
 
 In this section we present ion-ion potentials, fusion cross sections, and astrophysical S factors obtained from the methods outlined in Sec.~\ref{sec:form}.
+\begin{figure}
+	\includegraphics[width=\textwidth]{../Figures/CC/PotentialsComp.pdf}
+	\caption{Ion-Ion fusion potentials from DC-TDHF, FHF, and DCFHF using the UNEDF1 force.}
+	\label{fig:pots}
+\end{figure}
+
 
 A light system such as \textsuperscript{12}C + \textsuperscript{12}C does not exhibit a strong energy dependence in the DC-TDHF potential, though in practice collision energies close to the fusion barrier are chosen to allow for maximal rearrangement.
 To this end, the energy chosen for comparison to experiment was $\mathrm{E_{c.m.}}=6.03$~MeV.
@@ -325,17 +307,39 @@ For DCFHF, a pocket is formed by the pressure resulting from the Pauli exclusion
 The potential that is created from the DC-TDHF method shows that dynamic features of the collision causes the effective potential to deviate from the incoming Coulomb potential earlier that both FHF and DCFHF.
 Also, DC-TDHF results in a thinner barrier than FHF and DCFHF, which is expected to enhance sub-barrier cross sections.
 
+\begin{figure}
+	\includegraphics*[width=\textwidth]{../Figures/CC/12C12CColl.pdf}
+	\caption{3D contour plot over projected pseudocolor density plot at distance of the barrier peak at $R=8.06$~fm. Solid red contour surface is drawn for $\rho = 0.08$~fm\textsuperscript{-3} and opaque gray shading is drawn for $\rho = 0.008$~fm\textsuperscript{-3} to show the value and location of interacting densities.}
+	\label{fig:dens}
+\end{figure}
+
+
 In Fig.~\ref{fig:dens}, a 3D contour plot resulting from the DC-TDHF calculation is shown over a pseudocolor density plot corresponding to the position of the barrier peak, $R=8.06$~fm. 
 At this position, the core contours of $\rho = 0.08$~fm\textsuperscript{-3} (solid red contour surface) are well separated at the top of the barrier. 
 The opaque, gray contour is drawn to show the level of the density in the overlapping region, $\rho = 0.008$~fm$^{-3}$.
 The relatively low density at the barrier peak indicates that Pauli repulsion will play a small role for this system at the barrier radius.
 Despite being small, this density overlap produces enough attraction to compensate the Coulomb repulsion, leading to fusion.
 
+\begin{figure}
+	\includegraphics*[width=\textwidth]{../Figures/CC/DensityProfile.pdf}
+	\caption{Density profile along the collision axis of the \textsuperscript{12}C + \textsuperscript{12}C system at the barrier peak for densities from the static FHF method and dynamic DC-TDHF method. }
+	\label{fig:denstrace}
+\end{figure}
+
 A more quantitative representation of the density profile at the barrier is shown in Fig.~\ref{fig:denstrace}.
 Here, the density is plotted along the collision axis. 
 It is interesting to note the higher density in the neck at this separation when dynamics is accounted for (DC-TDHF).
 This change of neck density, induced by the dynamics, is responsible for the lowering of the barrier in DC-TDHF, as seen in Fig.~\ref{fig:pots}.
 Although this change in barrier energy is relatively small, it can significantly influence tunneling probabilities at deep sub-barrier energies. 
+
+\begin{figure*}
+	\centering
+	\includegraphics[width=0.8\textwidth]{../Figures/CC/CrossSections.pdf}
+	\includegraphics[width=0.8\textwidth]{../Figures/CC/CrossSectionsLinear.pdf}
+	\caption{Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion cross sections from DC-TDHF, FHF, and DCFHF using the UNEDF1 force and experimental data from~\protect\citep{aguilera2006,spillane2007,zickefoose2011,barron-palos2006,high1977,jiang2018,mazarakis1973,patterson1969} in (a) logarithmic and (b) linear scales. The hindrance model is from Ref.~\protect\citep{jiang2007}.}
+	\label{fig:xsec}
+\end{figure*}
+
 
 The potentials of Fig.~\ref{fig:pots} are used to compute fusion cross sections in Fig.~\ref{fig:xsec}.
 At these scales the difference does not appear to be large, though DC-TDHF seems to slightly over predicts cross sections for this system bellow the barrier.
@@ -347,6 +351,13 @@ S(E)=\sigma(E)Ee^{2\pi \eta},
 \end{equation}
 where $E$ is the center of mass energy, $\eta=Z_1Z_2e^2/\hbar v$ is the Sommerfeld parameter, and $v$ is the relative velocity of the nuclei $v=\sqrt{2E/\mu}$ for a system of reduced mass $\mu$.
 The S factor is often used to analyze fusion reactions of astrophysical interest as, to some extent, it gets rid of the strong energy dependence at sub-barrier energies.
+
+\begin{figure}
+	\centering
+	\includegraphics*[width=0.9\textwidth]{../Figures/CC/SFactors.pdf}
+	\caption{Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion S factors from DC-TDHF, FHF, and DCFHF using the UNEDF1 force, DC-TDHF using the SLy4d force, the hindrance model from~\protect\citep{jiang2007}, and experimental data from~\protect\citep{aguilera2006,spillane2007,zickefoose2011,barron-palos2006,high1977,jiang2018,mazarakis1973,patterson1969}. }
+	\label{fig:sfac}
+\end{figure}
 
 Figure~\ref{fig:sfac} shows a comparison between theoretical and experimental S factors. 
 Both DCFHF and DC-TDHF predict a similar trend for deep sub-barrier energies.
@@ -363,17 +374,19 @@ When examining the behavior of the S factors at deep sub-barrier energies, diffe
 Nevertheless, the difference between the DC-TDHF predictions remains small, indicating that the results are only slightly affected by the energy dependence of the potential. 
 The bulk of this effect arises from the increasing and sharpening peaks of the coordinate dependent mass $M(R)$ at the location of the barrier at lower energies, though as mentioned before, density rearrangement also plays a role. 
 
+\begin{figure}
+	\includegraphics*[width=\textwidth]{../Figures/CC/SFactorsComp.pdf}
+	\caption{Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion S factors from DC-TDHF at (a) differing TDHF energies and (b) using different functionals.}
+	\label{fig:sfaccomp}
+\end{figure}
+
 Finally, let us investigate the sensitivity to the energy density functional. 
 As such, we have plotted the comparison using the resultant S factors in part (b) of Figure~\ref{fig:sfaccomp} which shows the astrophysical S factor for three different functionals: the SLy4d \protect\citep{kim1997} and UNEDF1 \protect\citep{kortelainen2012} Skyrme functionals and the QMC-I functional which has a different density dependence than the Skyrme one. 
 The main conclusion is that the trends are very similar for these three functionals. In particular, none of them predict a maximum in the S factor. 
 Quantitatively, the QMC results are lower throughout the sub-barrier energy region.
 Nevertheless, the variations in the experimental data does not allow for the unambiguous identification of what functional best reproduces experimental results.
 
-\begin{figure}
-	\includegraphics*[width=\textwidth]{../Figures/CC/SFactorsComp.pdf}
-	\caption{Comparison of \textsuperscript{12}C+\textsuperscript{12}C fusion S factors from DC-TDHF at (a) differing TDHF energies and (b) using different functionals.}
-	\label{fig:sfaccomp}
-\end{figure}
+
 
 
 \section{Conclusion}
@@ -395,7 +408,7 @@ Such a method would be of great use beyond light systems or fusion alone, openin
 
 
 
-\section*{Acknowledgments}
+\section{Acknowledgments}
 We thank S. Courtin for useful discussions and for clarifying experimental questions. 
 This work has been supported by the
 Australian Research Council Grants No. DP180100497 and DP190100256,

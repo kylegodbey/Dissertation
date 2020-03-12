@@ -18,18 +18,18 @@
 
 {
 	\bfseries\centering
-	The following work has been accepted by Physical Review C~\citep{guo2018b} and is reprinted below in its entirety.\\
-	\textcopyright2018 American Physical Society
+
 	\makeatletter
-	\begin{center}\large\bfseries
-		\@title
-		\par\end{center}
+
 	\begin{center}
 		\AB@authlist
 		
 		\AB@affillist
 	\end{center}
 	\makeatother
+	
+		The following work has been accepted by Physical Review C~\citep{guo2018b} and is reprinted below in its entirety.\\
+	\textcopyright2018 American Physical Society\\
 }
 \makeatletter
 \renewcommand{\AB@affillist}{}
@@ -38,7 +38,7 @@
 \setcounter{affil}{0}
 \makeatother
 
-\section*{abstract}
+\section*{Abstract}
 
 		{\bf [Background]}
 		The tensor interaction is known to play an important role in the nuclear structure studies of exotic nuclei.
@@ -300,6 +300,13 @@ Due to its fitting strategy, the contributions from the tensor force and the rea
 		\label{Fig:light}}
 \end{figure}
 
+\begin{figure}
+	\includegraphics[width=\textwidth]{../Figures/TensorPot/V3_ppt.pdf}
+	\caption{Internuclear potential obtained from FHF and DC-TDHF approaches for the Ca+Ca, Ca+Ni, and Ni+Ni reactions
+		with tensor (SLy5t) and without tensor (SLy5) forces.
+		\label{Fig:medium}}
+\end{figure}
+
 For light systems, we choose the spin-unsaturated $^{12}\mathrm{C}+\mathrm{^{12}C}$ and spin-saturated $^{16}\mathrm{O}+\mathrm{^{16}O}$ reactions
 for comparison. As we have reported in Ref.~\citep{Umar2014_PRC89-034611}, the potential barriers are sensitive to the
 colliding energy. Hence, the same initial energy, close to the Coulomb barrier, is used for the reaction with and without tensor forces.
@@ -314,12 +321,8 @@ For the spin-saturated system $^{16}\mathrm{O}+\mathrm{^{16}O}$, the internuclea
 having a barrier height of 10.02~MeV and a peak location of 8.66~fm. This indicates that the tensor force has negligible effect on the near-barrier fusion
 for the spin-saturated system $^{16}\mathrm{O}+\mathrm{^{16}O}$, which is consistent with the findings in Ref.~\citep{Stevenson2016_PRC93-054617}.
 For these light systems the tensor force shows a small effect on the interaction potential.
-\begin{figure*}
-	\includegraphics[width=\textwidth]{../Figures/TensorPot/V3_ppt.pdf}
-	\caption{Internuclear potential obtained from FHF and DC-TDHF approaches for the Ca+Ca, Ca+Ni, and Ni+Ni reactions
-		with tensor (SLy5t) and without tensor (SLy5) forces.
-		\label{Fig:medium}}
-\end{figure*}
+
+
 
 For reactions involving two medium mass nuclei, we have chosen five representative reactions $^{40}\mathrm{Ca}+\mathrm{^{40}Ca}$,
 $^{40}\mathrm{Ca}+\mathrm{^{48}Ca}$, $^{48}\mathrm{Ca}+\mathrm{^{48}Ca}$, $^{48}\mathrm{Ca}+\mathrm{^{56}Ni}$, and $^{56}\mathrm{Ni}+\mathrm{^{56}Ni}$,
@@ -345,12 +348,8 @@ tensor force was observed to decrease the barrier height in direct TDHF calculat
 the trend observed here.
 This difference might arise from the dynamical energy-dependent effects introduced by the tensor force that
 are not captured by the DC-TDHF potential.
-\begin{figure}[t]
-	\includegraphics[width=\textwidth]{../Figures/TensorPot/V5_Ca48Ca48.pdf}
-	\caption{Internuclear potential obtained from DC-TDHF approach for the reaction $^{48}\mathrm{Ca}+\mathrm{^{48}Ca}$ with SLy5, SLy5t,
-		T22, T26, T44, and T62 forces.
-		\label{Fig:TIJ}}
-\end{figure}
+
+
 
 For the spin-saturated reaction $^{40}\mathrm{Ca}+\mathrm{^{40}Ca}$, the interaction potential remains nearly unchanged by the inclusion of tensor force
 for both static and dynamical cases, indicating that the tensor force has almost no impact on the dynamical evolution for spin-saturated systems,
@@ -361,27 +360,37 @@ can cause one order lower in the fusion cross section at sub-barrier energies. F
 the potential barrier increases from a fraction up to a few MeV due to tensor force, which may results in changes of the sub-barrier fusion cross sections by a few orders of magnitude. For the medium mass systems
 with proton or neutron magic shells 20 and 28, the tensor force has a significant effect on the nucleus-nucleus potential, particularly in the inner region.
 
+\begin{table}[!hbt]
+	\centering
+	\caption{Isoscalar and isovector spin-current coupling constants in units of MeV~fm$^5$.}
+	\label{tab:CC}
+	%\begin{ruledtabular}
+	%\begin{tabular*}{0.4\textwidth}{@{\extracolsep{\fill}}rrr}
+	\begin{tabular}{c c c}
+		Force & $\mathrm{C}^\mathrm{J}_0$ & $\mathrm{C}^\mathrm{J}_1$  \\
+		\hline
+		T22   &     0   &      0   \\
+		T26   &   120   &    120   \\
+		T44   &   120   &      0   \\
+		T62   &   120   &   -120   \\
+		SLy5  &  15.65  &    64.55  \\
+		SLy5t & -19.35  &   -70.45
+	\end{tabular}
+	%\end{ruledtabular}
+\end{table}
+
+\begin{figure}
+%	\vspace{90px}
+	\includegraphics[width=\textwidth]{../Figures/TensorPot/V5_Ca48Ca48.pdf}
+	\caption{Internuclear potential obtained from DC-TDHF approach for the reaction $^{48}\mathrm{Ca}+\mathrm{^{48}Ca}$ with SLy5, SLy5t,
+		T22, T26, T44, and T62 forces.
+		\label{Fig:TIJ}}
+\end{figure}
+
 Until now, the studies have utilized the tensor force SLy5t.
 To obtain a comprehensive and rigorous understanding of the effects of the tensor force in heavy-ion collisions,
 we now proceed to a comparison among the results of various forces, for which the coupling constants
 are listed in Tab.~\ref{tab:CC}. Taking the reaction $^{48}\mathrm{Ca}+\mathrm{^{48}Ca}$ as an example,
-\begin{table}[!hbt]
-	\caption{Isoscalar and isovector spin-current coupling constants in units of MeV~fm$^5$.}
-	\label{tab:CC}
-	%\begin{ruledtabular}
-		%\begin{tabular*}{0.4\textwidth}{@{\extracolsep{\fill}}rrr}
-		\begin{tabular}{c c c}
-			Force & $\mathrm{C}^\mathrm{J}_0$ & $\mathrm{C}^\mathrm{J}_1$  \\
-			\hline
-			T22   &     0   &      0   \\
-			T26   &   120   &    120   \\
-			T44   &   120   &      0   \\
-			T62   &   120   &   -120   \\
-			SLy5  &  15.65  &    64.55  \\
-			SLy5t & -19.35  &   -70.45
-		\end{tabular}
-	%\end{ruledtabular}
-\end{table}
 we show the nucleus-nucleus potential with the six forces SLy5, SLy5t T22, T26, T44, and T62 in Fig.~\ref{Fig:TIJ}.
 For T$22$ and T$44$ the potentials are close to each other, indicating the isoscalar tensor coupling has
 negligible effect in this reaction. By comparing the results with T$26$, T$44$, and T$62$, the potential increases as the isovector tensor
@@ -393,8 +402,8 @@ Detailed discussions on this can be found in Ref.~\citep{Guo2018_PLB782-401}.
 The T$62$ (T$26$) interaction also leads to similar potentials as SLy5t (SLy5), even though they have quite different tensor coupling constants,
 because the rearrangement of the mean-field for T$62$ (T$26$)
 produce additional effects which cancel part of the tensor force in SLy5t (SLy5).
-\begin{figure}[t]
-	\includegraphics[width=\textwidth]{../Figures/TensorPot/V4_ppt.pdf}
+\begin{figure}
+	\includegraphics[width=0.9\textwidth]{../Figures/TensorPot/V4_ppt.pdf}
 	\caption{Internuclear potential obtained from DC-TDHF approach for the Ca+Sn systems with SLy5 (open circle) and SLy5t (solid circle) forces.
 		\label{Fig:heavy}}
 \end{figure}
@@ -428,7 +437,8 @@ parametrizations that incorporate deformation and reaction data into the fit pro
 The tensor force should be a part of these investigations.
 \label{summary}
 
-\section*{Acknowledgments}
+\vspace{100px}
+\section{Acknowledgments}
 %todo add acknowledgments
 This work is partly supported by NSF of China (Grants No. 11175252 and 11575189),
 NSFC-JSPS International Cooperation Program (Grant No. 11711540016), and Presidential Fund of UCAS,
