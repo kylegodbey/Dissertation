@@ -29,9 +29,42 @@
 %% Table of Contents
 \setcounter{secnumdepth}{7}
 \setcounter{tocdepth}{1}
+
+
+%\renewcommand{\contentsname}{TABLE OF CONTENTS}
+%\renewcommand{\listfigurename}{LIST OF FIGURES}
+%\renewcommand{\cftafterloftitle}{\hfill}
+%\renewcommand{\listtablename}{LIST OF TABLESfff}
+
+\renewcommand{\cfttoctitlefont}{\hfill\bfseries\normalsize\MakeUppercase}
+\renewcommand{\cftaftertoctitle}{\hfill\null\\[0.5in]  \hfill{\bfseries Page}}
 \renewcommand{\contentsname}{TABLE OF CONTENTS}
+%\renewcommand{\cfttoctitlefont}{\normalfont\hfill}
+%\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand\cftchapafterpnum{\vskip 5pt} % for spacing after each entry
+\renewcommand\cftsecafterpnum{\vskip 5pt} % for spacing after each entry
+\renewcommand\cftsubsecafterpnum{\vskip 5pt} % for spacing after each entry
+\renewcommand\cftsubsubsecafterpnum{\vskip 5pt} % for spacing after each entry
+\setlength{\cftbeforetoctitleskip}{0in}
+
+% List of figures formatting
+\renewcommand{\cftloftitlefont}{\hfill\normalsize\MakeUppercase}
+\renewcommand{\cftafterloftitle}{%
+	\addcontentsline{toc}{chapter}{\listfigurename}%
+	\hfill\null\\[0.5in]Figure\hfill{Page}}
 \renewcommand{\listfigurename}{LIST OF FIGURES}
+%\renewcommand{\cftloftitlefont}{\normalfont\hfill}
+%\renewcommand{\cftafterloftitle}{\hfill}
+\setlength{\cftbeforeloftitleskip}{0in}
+\setlength\cftbeforefigskip{\cftbeforechapskip} % for spacing after each entry
+
+% List of tables formatting
 \renewcommand{\listtablename}{LIST OF TABLES}
+\renewcommand{\cftlottitlefont}{\normalfont\hfill}
+%\renewcommand{\cftafterlottitle}{\hfill}
+\setlength{\cftbeforelottitleskip}{0in}
+\setlength\cftbeforetabskip{\cftbeforechapskip} % for spacing after each entry
+
 \renewcommand{\bibname}{\texorpdfstring{{BIBLIOGRAPHY\vspace{10mm}}}{BIBLIOGRAPHY}}
 
 %%
