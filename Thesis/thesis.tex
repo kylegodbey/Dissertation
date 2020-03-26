@@ -35,6 +35,24 @@
 % Changing page numbering style
 \doublespacing
 \pagenumbering{roman} \setcounter{page}{2}
+
+% Add header for chapter and page
+\addtocontents{toc}{\protect\vspace*{12pt}}
+\addtocontents{toc}{\protect{\bfseries \hspace*{-1.55em}CHAPTER \hfill {PAGE\hspace{-8pt}}}}
+\addtocontents{toc}{\protect\vspace*{12pt}}
+% This is for having same heading on next page
+% a dangerous precedent considering the length of the figure list...
+%\addtocontents{toc}{\protect\afterpage{\hspace*{-2.05em}\bfseries CHAPTERS\hfill PAGE}}
+%\addtocontents{toc}{\protect\afterpage{\vspace*{25pt}}}
+
+\addtocontents{lot}{\protect\vspace*{12pt}}
+\addtocontents{lot}{\protect{\bfseries TABLE \hfill {PAGE\hspace{-8pt}}}}
+\addtocontents{lot}{\protect\vspace*{14pt}}
+
+\addtocontents{lof}{\protect\vspace*{12pt}}
+\addtocontents{lof}{\protect{\bfseries FIGURE \hfill {PAGE\hspace{-8pt}}}}
+\addtocontents{lof}{\protect\vspace*{14pt}}
+
 %%
 %% Dedication
 \input{../Chapters/dedication}
@@ -76,6 +94,7 @@
 %\renewcommand{\cftdot}{}
 %\cftaddtitleline{toc}{chapter}{CHAPTERS}{}
 %\renewcommand{\cftdot}{3}
+
 
 %%
 %% Introduction - Also Chapter 1
